@@ -139,6 +139,28 @@ body{
   padding-bottom: 90px;
 }
 
+.conB .description{
+  flex: 0 0 100%;
+}
+
+.conB h1{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom:5px;
+  border-bottom: solid 2px #000;
+}
+
+.conB p{
+  display: block;
+  padding:0;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1.8em;
+  opacity: 0.8;
+  font-size: 14px;
+
+}
 .conB .text{
   padding-left: 20px;
   padding-right: 20px;
@@ -166,13 +188,6 @@ body{
   font-size: 20px;
 }
 
-.conB p{
-  margin-top: 0px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  line-height: 1.8em;
-  opacity: 0.8;
-}
 
 .conB a{
   display:inline-block;
@@ -189,6 +204,7 @@ body{
 @media(min-width: 768px){
   .conB .container{
     display: flex;
+    flex-wrap: wrap;
     max-width: 1000px;
     max-width: var(--large-width);
     margin-left: auto;
