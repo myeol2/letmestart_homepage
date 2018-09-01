@@ -7,95 +7,127 @@
     <title>Son's website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-    
-    {% block stylesheets %}
-    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-    {% endblock stylesheets %}
-    
-    {% block javascript %}
+
+     {% block javascript %}
     <script src="https://use.fontawesome.com/926fe18a63.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+    <!-- for Photoslide --!>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    {% endblock stylesheets %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.bundle.js"></script>
+
     <script>
-       $(function() {
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 400) {
-                    $('#MOVE_TOP_BTN').fadeIn("fast");
-                } else {
-                    $('#MOVE_TOP_BTN').fadeOut("fast");
-                }
-            });
-            
-            $("#MOVE_TOP_BTN").click(function() {
-                $('html, body').animate({
-                    scrollTop : 0
-                }, 400);
-                return false;
-            });
+        $(function() {
+          $(window).scroll(function() {
+            if ($(this).scrollTop() > 400) {
+              $('#MOVE_TOP_BTN').fadeIn("fast");
+            } else {
+              $('#MOVE_TOP_BTN').fadeOut("fast");
+            }
+          });
+
+          $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+              scrollTop : 0
+            }, 400);
+            return false;
+          });
         });
 
-        $(window).load(function(){
-          $(".se-pre-con").fadeOut("slow");
-        
+      $(window).load(function(){
+        $(".se-pre-con").fadeOut("slow");
+
+      });
+
+      $(window).ready(function () {
+
+        //initialize swiper when document ready
+        var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+
+          // If we need pagination
+          slidesPerView: 4,
+          spaceBetween: 50,
+          centeredSlides: true,
+          pagination: {
+            el: '.swiper-pagination',
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         });
+      });
 
 /*
-	    $(window).load(function() {
-	  	// Animate loader off screen 
+      $(window).load(function() {
+        // Animate loader off screen 
         $("iframe").load(function(){
-	      	$(".se-pre-con").fadeOut("slow");;
+          $(".se-pre-con").fadeOut("slow");;
         })
 
-	   });*/
+     });*/
 
     </script>
     {% endblock javascript %}
-   
+
   </head>
 
   <body>
 
-   <div class="se-pre-con"></div> 
-   
+    <div class="se-pre-con"></div> 
+
     <!--
-    {% block facebookSDK %}
-    {% endblock facebookSDK %}
-    !--> 
-    <header>
-      <div class="container">
-        <div class="container-small">
-          <a href="{% url "index" %}" class="headA">
-            <img src="{% static 'img/letmelogo2.png' %}" alt=""></a>
-
-          <button type="button" class="headC">
-            <span class="fa fa-bars" title="MENU"></span>
-          </button>
-        </div>
-
-        <nav class="headB">
-          <ul>
-            <li><a href="{% url "index" %}">소개</a></li>
-            <li><a href="{% url "activity"%}">활동</a></li>
-            <li><a href="{% url "team" %}">팀</a></li>
-            <li><a href="{% url "recruit"%}">지원</a></li>
-            <li><a href="{% url "contact" %}">문의</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    {% block content %}
-    {% endblock content %}
-
-
-    <a id="MOVE_TOP_BTN" href="#">
-      <span class="fa fa-arrow-circle-up">
-    </a>
-
-
-    <footer>
+      {% block facebookSDK %}
+      {% endblock facebookSDK %}
+      !--> 
+      <header>
         <div class="container">
-             
+          <div class="container-small">
+            <a href="{% url "index" %}" class="headA">
+              <img src="{% static 'img/letmelogo2.png' %}" alt=""></a>
+
+            <button type="button" class="headC">
+              <span class="fa fa-bars" title="MENU"></span>
+            </button>
+          </div>
+
+          <nav class="headB">
+            <ul>
+              <li><a href="{% url "index" %}">소개</a></li>
+              <li><a href="{% url "activity"%}">활동</a></li>
+              <li><a href="{% url "team" %}">팀</a></li>
+              <li><a href="{% url "recruit"%}">지원</a></li>
+              <li><a href="{% url "contact" %}">문의</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      {% block content %}
+      {% endblock content %}
+
+
+      <a id="MOVE_TOP_BTN" href="#">
+        <span class="fa fa-arrow-circle-up">
+      </a>
+
+
+      <footer>
+        <div class="container">
+
           <div class="footA">
             <h2>LOGGER</h2>
             <p>
@@ -105,38 +137,38 @@
 
             <nav class="footD">  
               <ul>
-              <li><a href="#">
-                <span class="fa fa-twitter"
-                 title="Twitter"></span>
-              </a></li>
+                <li><a href="#">
+                    <span class="fa fa-twitter"
+                          title="Twitter"></span>
+                  </a></li>
 
-              <li><a href="#">
-                <span class="fa fa-facebook"
-                 title="Facebook"></span>
-              </a></li>
+                  <li><a href="#">
+                      <span class="fa fa-facebook"
+                            title="Facebook"></span>
+                    </a></li>
 
-              <li><a href="#">
-                <span class="fa fa-google-plus"
-                 title="Google Plus"></span>
-              </a></li>
+                    <li><a href="#">
+                        <span class="fa fa-google-plus"
+                              title="Google Plus"></span>
+                      </a></li>
 
-              <li><a href="#">
-                <span class="fa fa-instagram"
-                 title="Instagram"></span>
-              </a></li>
+                      <li><a href="#">
+                          <span class="fa fa-instagram"
+                                title="Instagram"></span>
+                        </a></li>
 
-              <li><a href="#">
-                <span class="fa fa-youtube"
-                 title="YouTube"></span>
-              </a></li>
+                        <li><a href="#">
+                            <span class="fa fa-youtube"
+                                  title="YouTube"></span>
+                          </a></li>
               </ul>
             </nav>
           </div>
-          
+
           <nav class="footB">
             <div>
-            <h3>ABOUT</h3>
-             
+              <h3>ABOUT</h3>
+
               <ul>
                 <li><a href="#">설립</a></li>
                 <li><a href="#">주소</a></li>
@@ -172,7 +204,6 @@
           </div>
         </div>
       </footer>
-
 
   </body>
 
