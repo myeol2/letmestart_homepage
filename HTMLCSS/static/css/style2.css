@@ -1,0 +1,171 @@
+
+@charset "UTF-8";
+
+/*
+ * 12234A
+ * A35848
+ * 335196
+ * 476318
+ * A7E342
+ *
+ *
+
+/* base colors */
+:root{
+  --main-color: #335196;
+  --accent-color: #A35848;
+  --dark-color: #122249;
+  --text-bright-color: #ffffff;
+}
+
+body{
+  margin:0 ;
+  font-family: '맑은 고딕',
+  'Apple SD Ghotic Neo',
+  sans-serif;
+}
+
+
+.conA{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  /* 기본 높이를 화면높이로 하나, 화면을 줄여놓은경우 문제가능.
+   * 최소높이 450px, 최대 100vh*/
+  height: 100vh;
+  min-height: 450px;
+
+
+  background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url(../img/background.jpg);
+  background-image-position:center; 
+  /*cover 없애면 사진 여러개 붙여서 화면 채움. 쫙 늘려주는 역할*/
+  background-size:cover;
+  text-align: center;
+  color: #ffffff;
+ /* color: var(--text-bright-color);
+  */
+}
+
+.conA img{
+  width: 20%;
+}
+
+.conA h1{
+  margin-top:0;
+  margin-bottom: 10px;
+  font-family: Montserrat, sans-serif;
+  font-size:15vw;
+
+  /*letter spacing adds space at the right side of char.
+   * so, you need to add extra margin-left of the same size with ls
+   * */
+  letter-spacing: 0.2em;
+  margin-left: 0.2em;
+  /* 100 vw : screen width. 1em = font size.*/
+
+
+}
+
+.conA p{
+  margin-top:0;
+  margin-bottom:0;
+  font-size: 18px;
+ 
+}
+
+.conA a{
+
+  /*위치 지정*/
+  display : inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  /*border 지정*/
+  border: solid 3px #C26956;
+  border-radius: 6px;
+  /*background, color 지정*/
+  color: #fff;
+  /*color: var(--text-brigt-color);
+  */background-color: #A35858; 
+  /*background-color: var(--accent-color);
+  */font-size: 14px;
+  text-decoration:none;
+}
+
+.conA a:hover{
+  background-image:linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+
+}
+
+@media (min-width: 768px){
+  .conA h1{
+    font-size: 115px;
+  }
+  
+  .conA p{
+    font-size: 24px
+  }
+
+  .conB .container{
+    display : flex;
+  }
+
+  .conB .text{
+    flex: 1;
+  }
+}
+
+
+
+.conB h2{
+  margin-top: 0;
+  margin-botton: 10px;
+  font-size: 20px;
+}
+
+.conB p{
+  margin-top: 0;
+  margin-botton : 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.conB a{
+  text-decoration: none;
+}
+.conB a:hover{
+  text-decoration: underline;
+}
+
+.conB .container{
+  padding-top: 80px;
+  padding-bottom: 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conB .text{
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.conB .icon{
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 40px;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #ddd;
+}
+
+.conB .text {
+  text-align: center;
+}
+

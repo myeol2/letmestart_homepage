@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheets %}
+  {{ block.super }}
+{% endblock stylesheets %}
+
+{% block javascript %}
+
+  {{ block.super }}
+
+{% endblock javascript %}
+
+{% block facebookSDK %}
+    
+  <div id="fb-root"></div>
+  <script>
+  
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2124710811118616',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+     
+      
+      var my_video_player;
+      FB.Event.subscribe('xfbml.ready', function(msg) {
+      if (msg.type === 'video') {
+        my_video_player = msg.instance;
+        
+        $(".se-pre-con").fadeOut("slow");
+      }
+      });
+    };
+    
+    
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk')); 
+  </script>
+
+{% endblock facebookSDK %}
+
+
+{% block content %}
+     
+        <section class="conA">
+        <div class="container">
+          <div class="spacer"></div> 
+          
+          <!--
+          <div class="fb-video"
+          data-href="https://www.facebook.com/letmestart/videos/1947738842192551/"
+          data-width="1180"
+          data-allowfullscreen="true"
+          ></div>
+          !-->
+			    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&autoplay=1" 
+            scrolling="no" frameborder="0" 
+            allowTransparency="true" 
+            allow="encrypted-media" allowFullScreen="true"
+            autoplay="true"></iframe>
+
+          <!--
+          <img src="{% static 'img/다운로드.svg' %}" alt="">
+          <h1>LETMESTART</h1>
+          <p>Find yourself with us</p>
+          <a href="#">로거 시작</a>
+          --!>
+        </div>
+      </section>
+
+      <section class="conB">
+        <div class="container">
+          
+          <div class="text">
+            <span class="fa fa-bar-chart icon"></span>
+            <h2>라이프로그란?</h2>
+            <p>일상의 이런저런 것들을 기록하다 보면 보이지 않던 소중한 것들이 보입니다.</p>
+            <a href="#">MORE... 
+            <span class="fa fa-chevron-right"></span>
+            </a>
+          </div>
+
+          <div class="text">
+            <span class="fa fa-gears icon"></span>
+            <h2>스마트폰이 있다면</h2>
+            <p>스마트폰이 있다면 언제라도 라이프로그를 시작할 수 있습니다.</p>
+            <a href="#">MORE... 
+            <span class="fa fa-chevron-right"></span>
+            </a>
+          </div>
+
+          <div class="text">
+            <span class="fa fa-rocket icon"></span>
+            <h2>SNS와의 연동</h2>
+            <p>Twitter와 Facebook 등의 SNS와 연동해서 로그를 간단하게 공유할 수 있습니다.</p>
+            <a href="#">MORE... 
+            <span class="fa fa-chevron-right"></span>
+            </a>
+          </div>            
+        </div> 
+      </section>
+
+
+
+      <section class="conC">
+        <div class="container">
+          <div class="photo"></div>
+          <div class="text">
+            <h2>라이프로그와 함께하는 재미있는 일상 생활</h2>
+            <p>그때그때 일상을 기록하는 라이프로그, 나중에 과거의 일상을 보면 그때는 알지 못했던 다양한 즐거움이 보일 것입니다.</p>
+            <a href="#">라이프로그 살펴보기
+            <span class="fa fa-chevron-right"></span>
+            </a>	
+          </div>
+        </div>
+      </section>  
+   
+      <section class="conD">
+        <div class="container">
+          <div class="photo"></div>
+          <div class="text">
+            <h2>라이프로그와 함께하는 재미있는 일상 생활</h2>
+            <p>그때그때 일상을 기록하는 라이프로그, 나중에 과거의 일상을 보면 그때는 알지 못했던 다양한 즐거움이 보일 것입니다.</p>
+            <a href="#">라이프로그 살펴보기
+            <span class="fa fa-chevron-right"></span>
+            </a>	
+          </div>
+        </div>
+      </section>  
+   
+
+  {% endblock content %}
+
+  
+

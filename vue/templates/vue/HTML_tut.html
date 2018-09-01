@@ -1,0 +1,70 @@
+{% extends 'vue/index1.html' %}
+{% load static %}
+
+{% block content_HTML %}
+<h1> Do not be hurry! Step by Step. kepp up the good work</h1>
+<p> My first paragraph </p>
+<p> My Second paragraph </p>
+<em>This sentence has been emphasized. <strong>You deserve to be happy. </strong></em> 
+
+<div>
+  <ul> 
+   <h2>Things you must not forget</h2>
+    <li>There is no correct answer in your life</li>
+    <li>Your life is a present. seize the moment.</li>
+    <li>You are awesome!</li>
+  </ul>
+</div>
+
+<div>
+  <a href="www.naver.com">Click here to Naver</a>(opens in same browser window)
+  <br/> 
+  <a href="https://www.instagram.com" target="_blank"> Click here to Instagram with a new window </a>
+</div>
+
+<p>Here's the delidded.com logo:</p>
+
+<img src="https://www.delidded.com/logo.png" alt="Delidded logo"> 
+{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block content_CSS %}
+
+<!--
+<input type="button" class="btn" value="Button 1">
+<input type="button" class="btn gray" value="Button 2">
+-->
+
+<div id="header">
+  
+  <a id="logo" href="/">
+    <img src="https://www.delidded.com/logo.png" alt="Delidded.com Logo" height="36">
+  </a> 
+  <ul id="menu">
+    <li><a href="/html/"> HTML </a></li>
+    <li><a href="/css/"> CSS </a></li>
+    <li><a href="/js/"> JavaScript </a></li>
+  </ul>
+
+  <ul id="menu-right">
+    <li><a href="/login/"> Login </a></li>
+  </ul>
+
+
+</div>
+
+<div id="main">
+  <h2> Mgson Web Design </h2>
+    
+  <p> Welcome to <span class="domain"> mgson.com </span>.<p>
+
+
+  <input type="button" value="Click me">
+</div>
+
+{% endblock %}
