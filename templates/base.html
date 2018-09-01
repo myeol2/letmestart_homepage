@@ -57,7 +57,7 @@
 
           // If we need pagination
           slidesPerView: 4,
-          spaceBetween: 50,
+          spaceBetween: 30,
           centeredSlides: true,
           pagination: {
             el: '.swiper-pagination',
@@ -104,11 +104,29 @@
             </button>
           </div>
 
-          <nav class="headB">
+          <nav class="headB"> 
             <ul>
-              <li><a href="{% url "index" %}">소개</a></li>
-              <li><a href="{% url "activity"%}">활동</a></li>
-              <li><a href="{% url "team" %}">팀</a></li>
+              <li class="headnav">
+                <a href="{% url "index" %}">소개</a>
+                
+                <ul>
+                  <li><a href="#">소개</a></li>
+                  <li><a href="#">팀</a></li>
+                  <li><a href="#">지도교수</a></li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="{% url "activity"%}">활동</a>
+                
+                <ul>
+                  <li><a href="#">정기공연</a></li>
+                  <li><a href="#">갈라쇼</a></li>
+                  <li><a href="#">친목활동</a></li>
+                </ul> 
+              </li>
+              
+              <li><a href="{% url "team" %}">사람들</a></li>
               <li><a href="{% url "recruit"%}">지원</a></li>
               <li><a href="{% url "contact" %}">문의</a></li>
             </ul>
@@ -129,10 +147,10 @@
         <div class="container">
 
           <div class="footA">
-            <h2>LOGGER</h2>
+            <h2>LETMESTART</h2>
             <p>
             주소: IT 전문서시 위키구 북스동<br>
-            <a href="http://logger.nett/">http://logger.nett/</a>
+            <a href="http://logger.net/">http://letmestart.org</a>
             </p>
 
             <nav class="footD">  
@@ -140,27 +158,32 @@
                 <li><a href="#">
                     <span class="fa fa-twitter"
                           title="Twitter"></span>
-                  </a></li>
+                  </a>
+                </li>
 
-                  <li><a href="#">
-                      <span class="fa fa-facebook"
-                            title="Facebook"></span>
-                    </a></li>
+                <li><a href="#">
+                    <span class="fa fa-facebook"
+                          title="Facebook"></span>
+                  </a>
+                </li>
 
-                    <li><a href="#">
-                        <span class="fa fa-google-plus"
-                              title="Google Plus"></span>
-                      </a></li>
+                <li><a href="#">
+                    <span class="fa fa-google-plus"
+                          title="Google Plus"></span>
+                  </a>
+                </li>
 
-                      <li><a href="#">
-                          <span class="fa fa-instagram"
-                                title="Instagram"></span>
-                        </a></li>
+                <li><a href="#">
+                    <span class="fa fa-instagram"
+                          title="Instagram"></span>
+                  </a>
+                </li>
 
-                        <li><a href="#">
-                            <span class="fa fa-youtube"
-                                  title="YouTube"></span>
-                          </a></li>
+                <li><a href="#">
+                    <span class="fa fa-youtube"
+                          title="YouTube"></span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -200,7 +223,7 @@
           </nav>
 
           <div class="footC">  
-            © LOGGER corp. All rights reserved.
+            © Let me start. All rights reserved.
           </div>
         </div>
       </footer>

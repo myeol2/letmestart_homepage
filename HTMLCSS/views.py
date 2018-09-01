@@ -23,5 +23,6 @@ def contact(request):
 
     return render(request, 'HTMLCSS/contact.html')
 
+def play(request):
 
-
+    return render(request, 'HTMLCSS/play.html')

@@ -8,6 +8,6 @@ urlpatterns = [
         path('activity', views.activity, name='activity'),
         path('recruit', views.recruit, name='recruit'),
         path('contact', views.contact, name='contact'),
-        
+        path('play', views.play, name='play'),        
         ]
 

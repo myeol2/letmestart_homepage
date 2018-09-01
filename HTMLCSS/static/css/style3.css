@@ -13,6 +13,8 @@
   --medium-width: 800px;
   --header-height: 60px;
   --header-height-border: 63px;
+  --bg-beige: #F3EFE7;
+  --bg-purple: #EAE6EE;
 }
 
 
@@ -134,8 +136,15 @@ body{
 
 }
 
+/* ConB : Play*/
+
+.conB{
+  text-align: center;
+  background-color: #F3EFE7;
+}
+
 .conB .container{
-  padding-top: 150px;
+  padding-top: 70px;
   padding-bottom: 90px;
 }
 
@@ -147,19 +156,20 @@ body{
 .conB h1{
   display: inline-block;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding-bottom:5px;
   border-bottom: solid 2px #000;
+  font-size: 28px;
 }
 
 .conB p{
   display: block;
   padding:0;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   line-height: 1.8em;
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 18px;
 
 }
 
@@ -208,47 +218,6 @@ body{
 .swiper-slide:hover{
   opacity:0.8;
 }
-
-.conB .text{
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 60px;
-  text-align:center;
-}
-
-.conB .icon{
-  display: inline-block;
-  margin-bottom: 20px;
-  font-size: 40px;
-  width: 2em;
-  line-height: 2em;
-  vertical-align: middle;
-  border-radius: 50%;
-  background-color: #ddd;
-  background-color: var(--icon-bg-color);
-  color: #fff;
-  color: var(--icon-color);
-}
-
-.conB h2{
-  margin-top: 0px;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-
-.conB a{
-  display:inline-block;
-  color: #335196;
-  color: var(--main-color);
-
-  text-decoration: none;
-}
-
-.conB a:hover{
-  text-decoration: underline;
-}
-
 @media(min-width: 768px){
   .conB .container{
     display: flex;
@@ -259,10 +228,99 @@ body{
     margin-right: auto;
 
     }
+}
 
-  .conB .text{
+/* conE : Team */
+
+.conE{
+  background-color: #EAE6EE;
+  color: #000;
+  text-align: center;
+}
+
+.conE .container{
+  padding-top: 70px;
+  padding-bottom: 90px;
+
+}
+
+.conE .description{
+  flex: 0 0 100%;
+}
+
+
+.conE h1{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding-bottom:5px;
+  border-bottom: solid 2px #000;
+  font-size: 28px;
+}
+
+.conE p{
+  display: block;
+  padding:0;
+  margin-top: 0;
+  margin-bottom: 60px;
+  line-height: 1.8em;
+  opacity: 0.8;
+  font-size: 18px;
+
+}
+
+.conE .text{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  text-align:center;
+}
+
+.conE .icon{
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 60px;
+  width: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #eee;
+  color: #fff;
+  color: var(--main-color);
+}
+
+.conE .text p{
+  height: 65px;
+  font-size: 16px;
+}
+
+
+.conE a{
+  display:inline-block;
+  color: var(--main-color);
+
+  text-decoration: none;
+}
+
+.conE a:hover{
+  text-decoration: underline;
+}
+
+
+@media(min-width: 768px){
+  
+  .conE .container{
+    display: flex;
+    flex-wrap : wrap;
+    max-width: 1080px;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .conE .text{
     flex: 1;
   }
+
 }
 
 .conC{
@@ -425,9 +483,9 @@ body{
 
 
 footer{
-  background-color: var(--main-color);
+  background-color: var(--bg-beige);
   color: #fff;
-  color: var(--text-bright-color);
+  color: var(--dark-color);
 }
 
 
@@ -581,6 +639,24 @@ header{
 	font-size: 12px;
 	text-decoration: none;
 }
+
+.headB ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  z-index: 101;
+}
+
+.headB ul li:hover ul{
+  display: block ;
+}
+
+.headB ul li ul li{
+  height: auto;
+  line-height: 1;
+  padding:0;
+  margin:0;
+ }
 
 .headB a:hover{
   background-color: rgba(255,255,255,0.3);
