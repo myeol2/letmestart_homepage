@@ -626,15 +626,12 @@ header{
   position: fixed;
   z-index: 101;
   width: 100%;
-  height:60px;
-  align-items: center;
   background-color: rgba(0,0,0,0.9);
 }
 
 .headA {
   display: inline-block;
   height: 60px;
-  line-height: 60px;
 }
 
 .headA img{ 
@@ -645,11 +642,13 @@ header{
   margin: 0px;
   padding: 0px;
   list-style: none;
+
 }
 
 .headB a{
 	display: block;
-	padding: 15px;
+	max-height: 60px;
+  padding: 25px;
 	color: #fff;
 	font-size: 12px;
 	text-decoration: none;
@@ -658,23 +657,29 @@ header{
 .headB ul li ul {
   display: none;
   position: absolute;
-  background-color: #333;
+  color: var(--bg-beige);
+  background-color: var(--dark-color);
   z-index: 101;
 }
 
 .headB ul li:hover ul{
   display: block ;
+
 }
 
+
 .headB ul li ul li{
-  height: auto;
-  line-height: 1;
+  line-height: 0.2;
   padding:0;
   margin:0;
  }
 
+.headB ul li:hover{
+  background-color: var(--dark-color);
+} 
 .headB a:hover{
-  background-color: rgba(255,255,255,0.3);
+  color: var(--dark-color);
+  background-color: var(--bg-beige);
 }
 
 
@@ -691,10 +696,16 @@ header{
 
 }
 
+header .container-small{
+  height: 60px;
+}
+
+
 @media(max-width: 767px){
 
   header .container-small{
     display: flex;
+    height:60px;
     align-items: center;
     justify-content: space-between;
   }
@@ -712,17 +723,23 @@ header{
 
   header .container{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1080px;
     max-width: var(--large-width);
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .headB{
+    display:flex;
+  }
+
   .headB ul{
     display: flex;
-    
+  }
+  
+  .headB ul li ul{
+    width: 120px;
   }
 
   .headC {
@@ -771,7 +788,7 @@ header{
 .conF .grid-photo{
   margin: 2px;
   flex: 1 1 333px;  
-  min-height: 300px;
+  min-height: 250px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
