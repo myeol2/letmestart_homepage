@@ -316,7 +316,6 @@ body{
   text-decoration: underline;
 }
 
-
 @media(min-width: 768px){
   
   .conE .container{
@@ -493,8 +492,7 @@ body{
 
 
 footer{
-  background-color: var(--bg-beige);
-  color: #fff;
+  background-color: #ddd;
   color: var(--dark-color);
   text-align: center;
 }
@@ -733,3 +731,65 @@ header{
 }
 
 
+/* ConB : Play*/
+
+.conF{
+  text-align: center;
+  background-color: #F3EFE7;
+}
+
+.conF .container{
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+.conF .description{
+  flex: 0 0 100%;
+}
+
+
+.conF h1{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding-bottom:5px;
+  border-bottom: solid 2px #000;
+  font-size: 28px;
+}
+
+.conF p{
+  display: block;
+  padding:0;
+  margin-top: 0;
+  margin-bottom: 40px;
+  line-height: 1.8em;
+  opacity: 0.8;
+  font-size: 18px;
+
+}
+
+.conF .grid-photo{
+  margin: 2px;
+  flex: 1 1 333px;  
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media(min-width: 768px){
+  .conF .container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1080px;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    }
+  }
+@media(min-width: 1000px){
+  .conF .grid-photo{
+        flex: 1 1 32%;
+    }
+}

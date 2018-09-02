@@ -59,12 +59,15 @@
           data-allowfullscreen="true"
           ></div>
           !-->
-            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&width=1080&height=411&autoplay=1" 
+          <!--
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&autoplay=1" 
               scrolling="no" frameborder="0" 
               allowTransparency="true" 
               allow="encrypted-media" allowFullScreen="true"
               autoplay="true"></iframe>
+              --!>
           </div>
+          
             <!--
           <img src="{% static 'img/다운로드.svg' %}" alt="">
           <h1>LETMESTART</h1>
@@ -171,36 +174,24 @@
         </div> 
       </section>
       
-      <!--
-      <section class="conC">
+      <section class="conF">
         <div class="container">
-          
-          
-          <div class="photo"></div>
-          <div class="text">
-            <h2>라이프로그와 함께하는 재미있는 일상 생활</h2>
-            <p>그때그때 일상을 기록하는 라이프로그, 나중에 과거의 일상을 보면 그때는 알지 못했던 다양한 즐거움이 보일 것입니다.</p>
-            <a href="#">라이프로그 살펴보기
-            <span class="fa fa-chevron-right"></span>
-            </a>	
+          <div class="description"> 
+            <h1>주요 활동</h1>
+            <p>정기공연 외에도 매 학기마다 모든 구성원이 다함께 준비하는 갈라쇼, YB와 OB가함께하는 렛미여행,
+            <br> 뮤지컬 단체 관람, 플래시몹, 교내 공식 행사, 방송 출연 등 다양한 활동을 하고 있습니다.</p>
           </div>
-        </div>
-      </section>  
        
-      <section class="conD">
-        <div class="container">
-          <div class="photo"></div>
-          <div class="text">
-            <h2>라이프로그와 함께하는 재미있는 일상 생활</h2>
-            <p>그때그때 일상을 기록하는 라이프로그, 나중에 과거의 일상을 보면 그때는 알지 못했던 다양한 즐거움이 보일 것입니다.</p>
-            <a href="#">라이프로그 살펴보기
-            <span class="fa fa-chevron-right"></span>
-            </a>	
-          </div>
-        </div>
-      </section>  
-      !-->
 
+          {% for idx in "123456" %}
+            {% static "img/intro_photogrid" as grid_root %}
+            <div class="grid-photo" style="background-image: url('{{grid_root}}_{{idx}}.jpg')"></div>
+          {% endfor %} 
+        </div>
+
+        
+      </section>
+      
   {% endblock content %}
 
   
