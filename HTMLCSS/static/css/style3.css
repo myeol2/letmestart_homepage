@@ -48,7 +48,6 @@ body{
   
   height: 100vh;
   min-height: 500px;
-  max-height: 750px;
   background-color: #000;
   background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2))
   /*background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2)), url('../img/curtain-purple-bg.jpg');
@@ -84,7 +83,7 @@ body{
 .conA iframe{
   width: 100%;
   max-width:1080px;
-  height: 90%; 
+  height: 95%; 
 }
 
 /*
