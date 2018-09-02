@@ -51,7 +51,7 @@
         <section class="conA">
         <div class="container">
           <div class="spacer"></div> 
-          
+          <div class="video-container"> 
           <!--
           <div class="fb-video"
           data-href="https://www.facebook.com/letmestart/videos/1947738842192551/"
@@ -59,13 +59,12 @@
           data-allowfullscreen="true"
           ></div>
           !-->
-          <!--
-          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&autoplay=1" 
-            scrolling="no" frameborder="0" 
-            allowTransparency="true" 
-            allow="encrypted-media" allowFullScreen="true"
-            autoplay="true"></iframe>
-            !-->
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&autoplay=1" 
+              scrolling="no" frameborder="0" 
+              allowTransparency="true" 
+              allow="encrypted-media" allowFullScreen="true"
+              autoplay="true"></iframe>
+          </div>
             <!--
           <img src="{% static 'img/다운로드.svg' %}" alt="">
           <h1>LETMESTART</h1>
@@ -91,15 +90,18 @@
           <div class="swiper-container">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
+                  
                   <!-- Slides -->
-                  <div class="swiper-slide"><img src="{% static "img/play_15.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_14.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_13.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_12.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_11.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_10.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_9.jpg" %}"></div>
-                  <div class="swiper-slide"><img src="{% static "img/play_8.jpg" %}"></div>
+                  {% if idx_play %}
+                    {% for idx in idx_play %}
+                      {% static "img/play" as img_root %}
+                      <div class="swiper-slide"><img src="{{img_root}}_{{idx}}.jpg"></div>
+
+                    {% endfor %}
+                  {% else %}
+                    <p>No polls are available.</p>
+                  {% endif %}
+
                   ...
               </div>
               <!-- If we need pagination -->

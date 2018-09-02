@@ -110,9 +110,9 @@
                 <a href="{% url "index" %}">소개</a>
                 
                 <ul>
-                  <li><a href="#">소개</a></li>
+                  <li><a href="{% url "intro" %}">렛미스타트</a></li>
                   <li><a href="#">팀</a></li>
-                  <li><a href="#">지도교수</a></li>
+                  <li><a href="#">인사말</a></li>
                 </ul>
 
               </li>
@@ -122,12 +122,20 @@
                 <ul>
                   <li><a href="#">정기공연</a></li>
                   <li><a href="#">갈라쇼</a></li>
-                  <li><a href="#">친목활동</a></li>
+                  <li><a href="#">주요활동</a></li>
                 </ul> 
               </li>
               
               <li><a href="{% url "team" %}">사람들</a></li>
-              <li><a href="{% url "recruit"%}">지원</a></li>
+              <li>
+                <a href="{% url "recruit"%}">지원</a>
+                  <ul>
+                      <li><a href="#">지원과정</a></li>
+                      <li><a href="#">면접</a></li>
+                      <li><a href="#">자주묻는질문</a></li>
+                  </ul>
+              </li>
+
               <li><a href="{% url "contact" %}">문의</a></li>
             </ul>
           </nav>
@@ -155,39 +163,28 @@
 
             <nav class="footD">  
               <ul>
-                <li><a href="#">
-                    <span class="fa fa-twitter"
-                          title="Twitter"></span>
-                  </a>
-                </li>
-
-                <li><a href="#">
+                <li><a href="https://www.facebook.com/letmestart/">
                     <span class="fa fa-facebook"
                           title="Facebook"></span>
                   </a>
                 </li>
 
-                <li><a href="#">
-                    <span class="fa fa-google-plus"
-                          title="Google Plus"></span>
-                  </a>
-                </li>
-
-                <li><a href="#">
+                <li><a href="https://www.instagram.com/let_me_start/">
                     <span class="fa fa-instagram"
                           title="Instagram"></span>
                   </a>
                 </li>
 
-                <li><a href="#">
-                    <span class="fa fa-youtube"
-                          title="YouTube"></span>
+
+                <li><a href="https://www.instagram.com/let_me_start/">
+                    <span class="fa fa-comment"
+                          title="Instagram"></span>
                   </a>
                 </li>
-              </ul>
+             </ul>
             </nav>
           </div>
-
+          <!--
           <nav class="footB">
             <div>
               <h3>ABOUT</h3>
@@ -221,7 +218,7 @@
               </ul>
             </div> 
           </nav>
-
+          --!>
           <div class="footC">  
             © Let me start. All rights reserved.
           </div>
