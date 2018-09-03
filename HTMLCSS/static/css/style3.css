@@ -20,10 +20,15 @@
 
 body{
   margin:0;
+  padding: 0;
   font-family: '맑은 고딕',
     'Apple SD Gothic Neo',
     sans-serif;
   font-size: 16px;
+}
+
+#content_wrap{
+  padding-top: 60px;
 }
 
 .no-js #loader { display: none;  }
@@ -48,12 +53,11 @@ body{
   
   height: 100vh;
   min-height: 500px;
-  background-color: #000;
-  background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2))
+  background-image: linear-gradient(rgba(24,3,43,0.3), rgba(24,3,43,0.2)), url('../img/spotlight.png');
   /*background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2)), url('../img/curtain-purple-bg.jpg');
   */
-  background-size: cover;
-  background-position: center;
+  background-size:cover;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-origin: content-box;
   text-align: center;
@@ -73,17 +77,17 @@ body{
   flex: 0 0 65px;
 }
 
-.conA .video-container{
+.conA .iframe-wrap{ 
   display:flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex: 1; 
 }
 
 .conA iframe{
-  width: 100%;
-  max-width:1080px;
-  height: 95%; 
+  max-width: 1080px;
+  width: 101%;
+  height: 98%; 
 }
 
 /*
@@ -99,7 +103,7 @@ body{
 .conA h1{
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 15vw;
+  font-size: 10vw;
   font-family: Montserrat, sans-serif;
   letter-spacing: 0.2em;
   margin-left: 0.2em;
@@ -137,7 +141,7 @@ body{
 @media(min-width: 768px){
 
   .conA h1{
-    font-size:115px;
+    font-size:60px;
   }
 
   .conA p{
@@ -626,16 +630,24 @@ header{
   position: fixed;
   z-index: 101;
   width: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background: transparent;
+}
+
+.active{
+  background-image: linear-gradient(rgba(24,3,43,1), rgba(23,4,43,0.7)), url("../img/spotlight.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .headA {
   display: inline-block;
-  height: 60px;
+
 }
 
 .headA img{ 
   height:60px;
+  padding: 5px 0px;
+  box-sizing: border-box;
 }
 
 .headB ul{
@@ -646,7 +658,8 @@ header{
 }
 
 .headB a{
-	display: block;
+	box-sizing: border-box;
+  display: block;
 	max-height: 60px;
   padding: 25px;
 	color: #fff;
@@ -809,4 +822,39 @@ header .container-small{
   .conF .grid-photo{
         flex: 1 1 32%;
     }
+}
+
+.content-submenu{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 50vh;
+  min-height: 300px;
+  background-image: linear-gradient(rgba(24,3,43,0.5), rgba(0,0,0,0)), url('../img/nexttonormal-stage.jpg');
+  /*background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2)), url('../img/curtain-purple-bg.jpg');
+  */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  text-align: center;
+}
+
+
+.counter-container{
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.wrap-counter{
+  flex: 1;
+}
+
+.counter{
+  padding: 2px;
+  font-size: 3vw;
+  font-weight:bold;
 }

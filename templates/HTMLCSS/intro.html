@@ -1,51 +1,97 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block jqueryplugin %}
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+{% endblock jqueryplugin %}
+
+{% block javascript %}
+
+<script>
+  $(function(){
+    $(document).ready(function(){
+
+      $('.counter').counterUp({
+        delay: 10,
+        time: 800
+      });
+    });
+  });  
+    </script>
+{% endblock javascript %}
+
+
 {% block content %}
 
 
-<section class="conA">
-        <div class="container">
-          <div class="spacer"></div> 
-        </div>
-      </section>
 
-  <section class="conB">
-    <div class="container">
-      <div class="description">
+<div class="content-submenu sectionA">
+  <div class="container">
+  </div>
+</div>
 
-        <h1> 렛미스타트는? </h1>
-        <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-        제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-        제 15회 정기공연 '소울라이트'까지 
-        1년에 2회의 정기공연을 올리고 있습니다.
-        </p>          
+<section class="conB">
+  <div class="container">
+    <div class="description">
+
+      <h1> 렛미스타트는? </h1>
+      <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
+      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
+      제 15회 정기공연 '소울라이트'까지 
+      1년에 2회의 정기공연을 올리고 있습니다.
+      </p>
+    </div>
+
+    <div class="counter-container">  
+
+      <div class="wrap-counter">  
+        <span class="counter">2011</span>
+        <span>년 부터</span>
       </div>
-       
 
-   <section class="conB">
-    <div class="container">
-      <div class="description">
-
-        <h1> 렛미스타트는? </h1>
-        <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-        제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-        제 15회 정기공연 '소울라이트'까지 
-        1년에 2회의 정기공연을 올리고 있습니다.
-        </p>          
+      <div class="wrap-counter">  
+        <span class="counter">225</span>
+        <span>명이</span>
       </div>
-  <section class="conB">
-    <div class="container">
-      <div class="description">
 
-        <h1> 렛미스타트는? </h1>
-        <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-        제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-        제 15회 정기공연 '소울라이트'까지 
-        1년에 2회의 정기공연을 올리고 있습니다.
-        </p>          
+      <div class="wrap-counter">  
+        <span class="counter">12889</span>
+        <span>명의 관객 앞에서</span>
       </div>
- 
+
+      <div class="wrap-counter">  
+        <span class="counter">15</span>
+        <span>개의 극을 올렸습니다.</span>
+      </div>
+    </div>
+</section>   
+
+<section class="conB">
+  <div class="container">
+    <div class="description">
+      <h1> 렛미스타트는? </h1>
+      <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
+      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
+      제 15회 정기공연 '소울라이트'까지 
+      1년에 2회의 정기공연을 올리고 있습니다.
+      </p>          
+    </div>
+</section>   
+<section class="conB">
+  <div class="container">
+    <div class="description">
+
+      <h1> 렛미스타트는? </h1>
+      <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
+      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
+      제 15회 정기공연 '소울라이트'까지 
+      1년에 2회의 정기공연을 올리고 있습니다.
+      </p>          
+    </div>
+</section>   
+
 {% endblock content %}
 
 
