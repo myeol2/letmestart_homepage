@@ -33,9 +33,6 @@ def contact(request):
 
     return render(request, 'HTMLCSS/contact.html')
 
-def play(request):
-
-    return render(request, 'HTMLCSS/play.html')
 
 def intro(request):
     
@@ -49,4 +46,27 @@ def greeting(request):
             }
     return render(request, 'HTMLCSS/greeting.html', context)
 
+
+def play(request):
+    
+    id = request.GET.get('id','0')
+    context={
+            'id': id,
+            }
+    return render(request, 'HTMLCSS/play.html', context)
+
+def gala(request):
+    
+    id = request.GET.get('id','0')
+    context={
+            'id': id,
+            }
+    return render(request, 'HTMLCSS/gala.html', context)
+
+def activity(request):
+    
+    context={
+            'id': id,
+            }
+    return render(request, 'HTMLCSS/activity.html', context)
 
