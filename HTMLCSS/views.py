@@ -43,6 +43,10 @@ def intro(request):
 
 def greeting(request):
     
-    return render(request, 'HTMLCSS/greeting.html')
+    id = request.GET.get('id','0')
+    context={
+            'id': id,
+            }
+    return render(request, 'HTMLCSS/greeting.html', context)
 
 

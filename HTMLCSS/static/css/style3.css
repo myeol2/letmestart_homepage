@@ -946,12 +946,16 @@ footer{
 
 .button-greeting a{
   display: inline-block;
-  margin: 0;
-  padding: 10px 30px;
+  margin: 0px 10px;
+
   margin-bottom: 30px;
   
-  border: solid 2px var(--bg-gold);
   color: var(--dark-color);
   font-size: 18px;
   text-decoration: none;
+}
+
+.button-greeting a.active{
+  border-bottom: solid 2px var(--dark-color);
+
 }
