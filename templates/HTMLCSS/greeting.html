@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block javascript %}
+<script>
+
+  $(function(){
+    $("header > div > nav > ul > li:nth-child(1)").addClass('active');
+    $("#submenu-content > div > nav > ul > li:nth-child(3)").addClass('active');
+  })
+</script>
+{% endblock javascript %}
+
+{% block content %}
+
+{{block.super}}
+
+<section id="greeting">
+
+  <div class="container">
+    <div class='description'>
+
+    <div>
+      <h1> 인사말 </h1>
+    </div>
+
+    <div class="button-greeting">
+    <a href="?id=0">지도교수 인사말</a>
+    <a href="?id=1">공동대표 인사말</a>
+    </div>
+
+    <img src="{% static 'img/professor.jpg' %}">
+
+    <div class="text">
+      <h3>박성훈</h3> 
+      <p>
+        (현)넷마블 대표 <br>
+        (전) 로엔엔터테인먼트 대표이사<br> 
+        (전) 카카오 최고전략책임자 
+        <br><br>
+      </p>
+      
+      <p class="greeting-text mid-width border-top"> 
+        2011년, 뮤지컬을 좋아하는 어린 청춘들이 모여 
+        렛미스타트를 만들고 첫 공연을 올렸습니다.
+        그때로부터 7년이라는 시간이 흘렀지만, 열정 넘치는 청춘들은 
+        14회 정기공연을 준비하고 있습니다.
+        이들의 열정은 유독 추웠던 이번 겨울에도 죽지 않고 오히려 불타올랐습니다.
+        그런 열정을 가지고 준비한 이번 <넥스트 투 노멀> 역시 이전 공연들처럼 기대해볼만 합니다.
+        <넥스트 투 노멀>은 밝은 극은 아닙니다. 정신병 환자와 그 가족들이 
+        과거의 상처로 인해 겪는 갈등과 고통을 어린 청춘들이 소화하기엔 쉽지 않았을 것입니다.
+        그러나 그럼에도 불구하고 어두운 상황 속에서도 한줄기 빛과 같은 희망이 있다는 주제를
+        훌륭하게 표현해냈습니다. 20대 초반의 청춘들이 각고의 노력 끝에 만들어낸 공연입니다.
+        이번 14회 정기공연 <넥스트 투 노멀>이 관객 여러분에게도 '한 줄기 빛'이 될 수 있기를 바랍니다. 
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock content %}
+
+
+

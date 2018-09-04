@@ -133,7 +133,7 @@
                 <ul>
                   <li><a href="{% url "intro" %}">렛미스타트</a></li>
                   <li><a href="{% url "team" %}">구성</a></li>
-                  <li><a href="#">인사말</a></li>
+                  <li><a href="{% url "greeting" %}">인사말</a></li>
                 </ul>
 
               </li>
@@ -170,8 +170,10 @@
           <h1></h1>
           <nav class="submenu-nav">
             <ul>
-              {% block submenu_nav %}
-              {% endblock submenu_nav %}
+              <li><a href="{% url "intro" %}">렛미스타트는</a></li>
+              <li><a href="{% url "team" %}">구성</a></li>
+              <li><a href="{% url "greeting" %}">인사말</a></li>
+
             </ul>
         </div>
       </div>

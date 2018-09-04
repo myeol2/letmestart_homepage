@@ -13,6 +13,7 @@
       
     $(function(){
       $("header > div > nav > ul > li:nth-child(1)").addClass('active');
+      $("#submenu-content > div > nav > ul > li:nth-child(1)").addClass('active');
     })
 
   </script>
@@ -101,14 +102,5 @@
 </section>   
 
 {% endblock content %}
-
-
-{% block submenu_nav %}
-
-    <li class="active"><a href="{% url "intro" %}">렛미스타트는</a></li>
-    <li><a href="{% url "team" %}">구성</a></li>
-    <li><a href="{% url "intro" %}">인사말</a></li>
-
-{% endblock submenu_nav %}
 
 

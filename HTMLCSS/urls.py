@@ -10,5 +10,6 @@ urlpatterns = [
         path('play', views.play, name='play'),        
         path('intro/introduction', views.intro, name= 'intro'),
         path('intro/team', views.team, name='team'),
+        path('intro/greeting', views.greeting, name="greeting"),
         ]
 

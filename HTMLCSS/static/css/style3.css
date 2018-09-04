@@ -55,7 +55,7 @@ body{
   margin-top: 0;
   margin-bottom: 40px;
   padding-bottom:5px;
-  border-bottom: solid 2px var(--bg-gold);
+  border-bottom: solid 3px var(--bg-gold);
   font-size: 28px;
 }
 
@@ -182,15 +182,6 @@ body{
 }
 
 
-.conB h1{
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 40px;
-  padding-bottom:5px;
-  border-bottom: solid 2px var(--bg-gold);
-  font-size: 28px;
-}
-
 .conB p{
   display: block;
   padding:0;
@@ -261,7 +252,7 @@ body{
 /* conE : Team */
 
 .conE{
-  background-color: #EAE6EE;
+  background-color: #fff;
   color: #000;
 }
 
@@ -275,15 +266,6 @@ body{
   flex: 0 0 100%;
 }
 
-
-.conE h1{
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 40px;
-  padding-bottom:5px;
-  border-bottom: solid 2px #000;
-  font-size: 28px;
-}
 
 .conE p{
   display: block;
@@ -310,7 +292,7 @@ body{
   line-height: 1.5em;
   vertical-align: middle;
   border-radius: 50%;
-  background-color: #eee;
+  background-color: var(--bg-beige);
   color: #fff;
   color: var(--main-color);
 }
@@ -743,15 +725,6 @@ footer{
     padding-bottom: 90px;
   }
 
-  .conF h1{
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding-bottom:5px;
-    border-bottom: solid 2px #000;
-    font-size: 28px;
-  }
-
   .conF p{
     display: block;
     padding:0;
@@ -837,8 +810,8 @@ footer{
 
   .submenu-nav li{
     flex:1;
-    display: flex;
     height: 8vh;
+    display:flex;
     align-items:center;
     justify-content: center;
   }
@@ -853,6 +826,7 @@ footer{
 
   .submenu-nav a{
     flex:1;
+    padding:30px;
     color: var(--bg-beige);
     font-size: 18px;
     text-decoration: none;
@@ -881,14 +855,14 @@ footer{
 
 
 #team .container{
-  padding-top: 30px;
+  padding-top: 70px;
 }
 
 
 .photo-text{
   padding-top: 40px;
   border-top: solid 2px var(--dark-color);
-  padding-bottom: 40px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -922,9 +896,11 @@ footer{
 }
 
 .text p{
- font-size: 18px;
- line-height: 2em;
- opacity: 0.8;
+  font-size: 18px;
+  line-height: 2em;
+  opacity: 0.8;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #team .anchor{
@@ -934,3 +910,48 @@ footer{
 }
 
 
+/*=======
+ *greeting
+ *=======*/
+
+#greeting .container{
+  padding-top: 70px;
+}
+
+
+#greeting img{
+  
+  margin-bottom: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  width: 25vw;
+}
+
+.border-top{
+  border-top: solid 2px var(--bg-gold);
+
+} 
+
+.mid-width{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.greeting-text{
+  padding: 40px 0;
+
+}
+
+.button-greeting a{
+  display: inline-block;
+  margin: 0;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  
+  border: solid 2px var(--bg-gold);
+  color: var(--dark-color);
+  font-size: 18px;
+  text-decoration: none;
+}

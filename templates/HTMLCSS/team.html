@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block javascript %}
-  <script>
-      
-    $(function(){
-      $("header > div > nav > ul > li:nth-child(1)").addClass('active');
-    })
+<script>
 
-  </script>
+$(function(){
+  $("header > div > nav > ul > li:nth-child(1)").addClass('active');
+  $("#submenu-content > div > nav > ul > li:nth-child(2)").addClass('active');
+})
+
+</script>
 {% endblock javascript %}
 
 {% block content %}
@@ -19,7 +20,7 @@
 
   <div class="container">
     <div class='description'>
-      
+
       <h1> 구성 </h1>
       <p> 렛미스타트는 기획, 무대, 배우, 연출, 음악팀으로 구성되어 있으며, <br>
       최고의 극을 올리기 위해 함께 노력하고 있습니다.</p>
@@ -105,19 +106,10 @@
       </div>
     </div>
   </div>
-  <section>
+  </section>
 
 
     {% endblock content %}
-
-
-    {% block submenu_nav %}
-
-    <li><a href="{% url "intro" %}">렛미스타트는</a></li>
-    <li class="active"><a href="{% url "team" %}">구성</a></li>
-    <li><a href="{% url "intro" %}">인사말</a></li>
-
-    {% endblock submenu_nav %}
 
 
 

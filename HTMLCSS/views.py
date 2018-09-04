@@ -40,3 +40,9 @@ def play(request):
 def intro(request):
     
     return render(request, 'HTMLCSS/intro.html')
+
+def greeting(request):
+    
+    return render(request, 'HTMLCSS/greeting.html')
+
+
