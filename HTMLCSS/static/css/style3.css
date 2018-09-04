@@ -15,6 +15,8 @@
   --header-height-border: 63px;
   --bg-beige: #F3EFE7;
   --bg-purple: #EAE6EE;
+  --bg-brown: #4C251C;
+  --bg-gold: #CB8C01;
 }
 
 
@@ -145,7 +147,7 @@ body{
   }
 
   .conA p{
-    font-size: 24px;
+    font-size: 28px;
   }
 
 }
@@ -172,7 +174,7 @@ body{
   margin-top: 0;
   margin-bottom: 40px;
   padding-bottom:5px;
-  border-bottom: solid 2px #000;
+  border-bottom: solid 2px var(--bg-gold);
   font-size: 28px;
 }
 
@@ -497,35 +499,17 @@ body{
 
 footer{
   background-color: #ddd;
-  color: var(--dark-color);
   text-align: center;
 }
 
 
 @media(min-width: 768px){
   footer .container{
-    display: flex;
-    flex-wrap: wrap;
     max-width: 1080px;
     max-width: var(--large-width);
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
-  }
-
-  .footA{
-    flex: 0 0 100%;
-  }
-
-  .footB{
-    flex: 0 0 60%;
-  }
-
-  .footC{
-    flex: 0 0 100%;
-  }
-
-
+   
 }
 
 footer .container{
@@ -533,38 +517,38 @@ footer .container{
   padding-bottom: 40px;
 }
 
-.footA h2{
-  margin-top: 0px;
-  margin-bottom: 10px;
-  letter-spacing: 0.2em;
-  font-size: 30px;
-  font-family: Montserrat, sans-serif;
-}
-
-.footA p{
-  font-size: 14px;
-}
-
-.footA a{
+footer a{
   color: inherit;
   text-decoration: none;
-
+  display:block;
 }
 
-.footD {
+#footer-logo{
+  width: 20vw;
+  margin: 0px; 
+  z-index: -100;
+}
+
+footer p{
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.footer-sns {
+  margin-top:10px;
   display: flex;
   padding-bottom: 10px;
   justify-content: center;
 }
 
-.footD ul{
+.footer-sns ul{
   list-style: none;
   display: flex;
   margin: 0px;
   padding: 0;
 }
 
-.footD a{
+.footer-sns a{
   display: block;
   margin-right: 8px;
   padding: 0;
@@ -579,52 +563,11 @@ footer .container{
 
 }
 
-.footC {
+footer .copyright {
+  margin-top: 10px;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 }
-
-.footB h3{
-  margin-top: 0px;
-  margin-bottom: 10px;
-  display: block;
-  border-bottom: solid 1px currentcolor;
-  font-size: 14px;
-}
-
-.footB div{
-  margin-bottom: 20px;
-}
-
-.footB ul{
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
-.footB a{
-
-  display: block;
-  padding: 5px;
-  font-size: 12px;
-  color:inherit;
-  text-decoration: none;
-}
-@media(min-width: 784px){
-.footB{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-.footB div{
-    flex: 1;
-}
-
-.footB div:not(:first-child){
-    margin-left: 40px;
-  }
-}
-
 
 header{
   position: fixed;
@@ -633,7 +576,7 @@ header{
   background: transparent;
 }
 
-.active{
+header.active{
   background-image: linear-gradient(rgba(24,3,43,1), rgba(23,4,43,0.7)), url("../img/spotlight.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -824,13 +767,13 @@ header .container-small{
     }
 }
 
-.content-submenu{
+#submenu-content{
 
   display: flex;
   align-items: center;
   justify-content: center;
   
-  height: 50vh;
+  height: 40vh;
   min-height: 300px;
   background-image: linear-gradient(rgba(24,3,43,0.5), rgba(0,0,0,0)), url('../img/nexttonormal-stage.jpg');
   /*background-image: linear-gradient(rgba(24,3,43,0.2), rgba(0,0,0,0.2)), url('../img/curtain-purple-bg.jpg');
@@ -842,6 +785,60 @@ header .container-small{
   text-align: center;
 }
 
+#submenu-content h1{
+  flex: 1;
+  margin-bottom: 0px;
+  color: var(--bg-beige);
+  color: #5D1051;
+  font-size: 48px;
+}
+
+.submenu-nav{
+  flex: 0 0 50px;
+
+}
+
+#submenu-content .container{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width: 100%;
+  max-width: 1080px;
+  max-width: var(--large-width);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.submenu-nav ul{
+  display:flex;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+.submenu-nav li{
+  flex:1;
+  display: flex;
+  height: 8vh;
+  align-items:center;
+  justify-content: center;
+}
+
+.submenu-nav li.active{
+  background-color:var(--bg-gold);
+}
+
+.submenu-nav li:hover{
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3));
+}
+
+.submenu-nav a{
+  flex:1;
+  color: var(--bg-beige);
+  font-size: 18px;
+  text-decoration: none;
+}
 
 .counter-container{
   display: flex;
@@ -858,3 +855,5 @@ header .container-small{
   font-size: 3vw;
   font-weight:bold;
 }
+
+

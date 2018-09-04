@@ -9,28 +9,28 @@
 
 {% block javascript %}
 
-<script>
-  $(function(){
-    $(document).ready(function(){
+  <script>
+    $(function(){
+      $(document).ready(function(){
 
-      $('.counter').counterUp({
-        delay: 10,
-        time: 800
+        $('.counter').counterUp({
+          delay: 10,
+          time: 1000
+        });
       });
+    
     });
-  });  
-    </script>
+
+
+  </script>
 {% endblock javascript %}
 
 
 {% block content %}
 
+{{block.super}}
 
 
-<div class="content-submenu sectionA">
-  <div class="container">
-  </div>
-</div>
 
 <section class="conB">
   <div class="container">
@@ -94,5 +94,13 @@
 
 {% endblock content %}
 
+
+{% block submenu_nav %}
+
+    <li class="active"><a href="{% url "intro" %}">렛미스타트는</a></li>
+    <li><a href="{% url "team" %}">구성</a></li>
+    <li><a href="{% url "intro" %}">인사말</a></li>
+
+{% endblock submenu_nav %}
 
 

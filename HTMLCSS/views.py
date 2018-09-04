@@ -4,8 +4,11 @@ from django.shortcuts import render
 
 def index(request):
     play_index =  [2,3,4,5,7,8,9,10,11,12,13,14,15]
-    
-    context = {'idx_play': reversed(play_index)}
+     
+    context = {
+            'idx_play': reversed(play_index),
+            'idx_submenu': 1,
+            }
 
     return render(request, 'HTMLCSS/index.html', context)
 
@@ -15,8 +18,12 @@ def activity(request):
 
 
 def team(request):
+    
+    context = {
+            'idx_submenu': 2, 
+            }
 
-    return render(request, 'HTMLCSS/team.html')
+    return render(request, 'HTMLCSS/team.html', context=context)
 
 def recruit(request):
 

@@ -3,13 +3,16 @@
 
 {% block content %}
 
-<section class="content-submenu sectionA">
-  <div class="container">
-    <div class="spacer">
-  </div>
-</section>
-
+{{block.super}}
 
 {% endblock content %}
 
+
+{% block submenu_nav %}
+  
+    <li><a href="{% url "intro" %}">렛미스타트는</a></li>
+    <li class="active"><a href="{% url "team" %}">구성</a></li>
+    <li><a href="{% url "intro" %}">인사말</a></li>
+
+{% endblock submenu_nav %}
 
