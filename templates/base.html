@@ -71,7 +71,7 @@
           });
 
           $(window).scroll(function(){
-            if ($(this).scrollTop() > $('.sectionA').height()-50) {
+            if ($(this).scrollTop() > $('.sectionA').height()-150) {
               $('header').addClass('active');
             } else {
             //remove the background property so it comes transparent again (defined in your css)
@@ -127,7 +127,7 @@
 
           <nav class="headB"> 
             <ul>
-              <li class="headnav">
+              <li>
                 <a href="{% url "intro" %}">소개</a>
 
                 <ul>

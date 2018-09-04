@@ -1,18 +1,123 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block javascript %}
+  <script>
+      
+    $(function(){
+      $("header > div > nav > ul > li:nth-child(1)").addClass('active');
+    })
+
+  </script>
+{% endblock javascript %}
+
 {% block content %}
 
 {{block.super}}
 
-{% endblock content %}
+<section id="team">
+
+  <div class="container">
+    <div class='description'>
+      
+      <h1> 구성 </h1>
+      <p> 렛미스타트는 기획, 무대, 배우, 연출, 음악팀으로 구성되어 있으며, <br>
+      최고의 극을 올리기 위해 함께 노력하고 있습니다.</p>
+      <a name="team-planning" class="anchor"> </a>
+
+    </div>
+
+    <div class="photo-text">
+      <div class="photo-grid">
+        <img src="{% static 'img/team_planning.png'%}" alt="">
+      </div>
+      <div class="text">
+        <h1>기획팀</h1>
+        <p>기획팀은 페이스북 페이지와 인스타그램 계정 관리,
+        홍보영상 촬영및 제작, 연습실 예약, 홍보물(현수막/포스터/
+        팜플렛/티켓)제작과 주문, 회계 등의 세분화된 팀을 구성해
+        동아리 운영과 공연 준비에 차질이 생기지 않도록 다방면에서 힘 쓰고 있습니다.
+        또한 연출팀, 무대팀과 함께 공연 의상과 소품을 준비하는 일도 담당합니다.
+        공연 당일에도 기획팀원들은 스텝과 무대 크루로 공연장 안팎에서 활동하고 있습니다.
+        </p>
+      </div>
+      <a name="team-stage" class="anchor"></a>
+    </div>
+    <div class="photo-text photo-right">
+      <div class="photo-grid">
+        <img src="{% static 'img/team_stage.png'%}" alt="">
+      </div>
+      <div class="text">
+        <h1>무대팀</h1>
+        <p>무대팀은 극과 공연환경에 어울리는 무대를 디자인하고 제작하여 배우들이 
+        극중 공간에서 살아 숨 쉬게 하는 사람들입니다. 본격적인 무대 제작에 앞서 
+        전체적인 무대 분위기를 정하고 디자인을 구체화시킵니다.
+        여러 번의 회의를 통해 무대에서 구현하는 공간을 나눠 제작방법을 고민하고
+        도안을 완성합니다. 무대 제작은 공연 전 정해긴 기간 내에 집중적으로 이루어지며,
+        무대 설치는 공연기간 내에 이루어집니다.</p>
+      </div>
+      <a name="team-actor" class="anchor"></a>
+    </div>
+    <div class="photo-text">
+      <div class="photo-grid">
+        <img src="{% static 'img/team_actor.png'%}" alt="">
+      </div>
+      <div class="text">
+        <h1>배우팀</h1>
+        <p>무대에서 만나게 될 얼굴입니다. 배우팀은 약 두달여의 기간 동안
+        음악, 안무, 연출의 종합적인 연습을 통해 극을 만들어갑니다. 
+        하루 6시간 이상의 연습 이외에도 보다 완성도 높은 공연을 선보이기 위해서
+        댄스 학원을 다니기도 합니다. 모든 팀을 대표해서 무대에 서는 만큼
+        그 막중한 책임을 다하기 위해 끊임없이 고민하고 연구하며
+        연습에 매진합니다</p>
+      </div>
+      <a name="team-produce" class="anchor"></a>
+    </div>
+    <div class="photo-text photo-right">
+
+      <div class="photo-grid">
+        <img src="{% static 'img/team_produce.png'%}" alt="">
+      </div>
+      <div class="text">
+        <h1>연출팀</h1>
+        <p>연출팀은 렛미스타트의 극을 하나의 일관성 있는 방향으로 이끌어가는
+        역할을 하는 팀입니다. 학기 중에는 대본 회의를 통해 극의 주제, 인물,
+        그리고 상황을 분석한 후, 그를 토대로 작품을 렛미스타트에 알맞게 각색합니다.
+        또한, 다른 모든 팀들과 지속적으로 소통하면서 극을 무대 위에 효과적으로
+        구현할 준비를 해나갑니다. 정기 연습기간에는 배우들의 연기/안무 지도외에도
+        각 장면의 연출을 담당하며 음향, 조명, 의상, 소품, 크루 등의 일을 소화하며 정기공연을 준비합니다.
+        </p>
+      </div>
+      <a name="team-music" class="anchor"></a>
+    </div>
+    <div class="photo-text">
+      <div class="photo-grid">
+        <img src="{% static 'img/team_music.png'%}" alt="">
+      </div>
+      <div class="text">
+
+        <h1>음악팀</h1>
+        <p>음악팀은 공연 올릴 작품의 음악 분석, 배우팀의 노래 지도,
+        음원 자료 관리 등 공연 음악 전반을 담당하는 팀입니다. 방학중 연습 진행을 위해
+        학기 중에는 악보 분석을 하고 연습이 시작되면 배우팀의 음악 연습을 지도합니다.
+        배우들이 넘버를 이해하고 소화할 수 있도록 음정, 박자, 발음과
+        발성 점검을 도와주는 역할을 합니다.</p>
+      </div>
+    </div>
+  </div>
+  <section>
 
 
-{% block submenu_nav %}
-  
+    {% endblock content %}
+
+
+    {% block submenu_nav %}
+
     <li><a href="{% url "intro" %}">렛미스타트는</a></li>
     <li class="active"><a href="{% url "team" %}">구성</a></li>
     <li><a href="{% url "intro" %}">인사말</a></li>
 
-{% endblock submenu_nav %}
+    {% endblock submenu_nav %}
+
+
 
