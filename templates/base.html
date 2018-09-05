@@ -57,8 +57,17 @@
             },
         });
       })
-    });
+      });
     </script>
+   
+    <script>
+      function fnMove(name){
+        var offset = $(name).offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+      }
+    </script>
+
+
     {% endblock javascript %}
  
     <script>

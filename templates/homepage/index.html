@@ -28,6 +28,7 @@
           <p>Find yourself with us</p>
           <a href="#">로거 시작</a>
           !--> 
+          <!--
           <div class="iframe-wrap">
           <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&&autoplay=1" 
               scrolling="no" frameborder="0" 
@@ -35,6 +36,7 @@
               allow="encrypted-media" allowFullScreen="true"
               autoplay="true"></iframe>
           </div>
+          !-->
             <!--
           <img src="{% static 'img/다운로드.svg' %}" alt="">
           <h1>LETMESTART</h1>
@@ -60,19 +62,22 @@
           <div class="swiper-container">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
-                  
-                  <!-- Slides -->
-                  {% if idx_play %}
-                    {% for idx in idx_play %}
-                      {% static "img/play" as img_root %}
-                      <div class="swiper-slide"><img src="{{img_root}}_{{idx}}.jpg"></div>
+                 
+                {% if play_list %}
+                {% for play in play_list %}
 
-                    {% endfor %}
-                  {% else %}
-                    <p>No polls are available.</p>
-                  {% endif %}
+                <div class="swiper-slide">
+                  <a href="{% url 'play' %}?id={{play.idx}}#profile">
+                    <img src="{{play.poster.url}}">
+                  </a>
+                </div>
 
-                  ...
+                {% endfor %}
+                {% else %}
+                <p>No polls are available.</p>
+                {% endif %}
+
+                ...
               </div>
               <!-- If we need pagination -->
               <div class="swiper-pagination"></div>
@@ -82,9 +87,9 @@
               <div class="swiper-button-next"></div>
 
           </div>       
-                  
-                      
-                     
+
+
+
         </div> 
       </section>
 
@@ -99,7 +104,7 @@
             <h2>기획팀</h2>
             <p>렛미스타트의 살림꾼으로 각종 행사와 공연 홍보, 예매 등의 업무를 담당합니다</p>
             <a href="{% url "team" %}#team-planning">더보기 
-            <span class="fa fa-chevron-right"></span>
+              <span class="fa fa-chevron-right"></span>
             </a>
           </div>
 
@@ -108,7 +113,7 @@
             <h2>무대팀</h2>
             <p>관객들을 새로운 세상으로 데려가기 위해 밤낮없이 고민하는 팀!</p>
             <a href="{% url "team" %}#team-stage">더보기 
-            <span class="fa fa-chevron-right"></span>
+              <span class="fa fa-chevron-right"></span>
             </a>
           </div>
 
@@ -117,7 +122,7 @@
             <h2>배우팀</h2>
             <p>무대에서 만나게 될 얼굴들. 연습, 또 연습!</p>
             <a href="{% url "team" %}#team-actor">더보기 
-            <span class="fa fa-chevron-right"></span>
+              <span class="fa fa-chevron-right"></span>
             </a>
           </div>
 
@@ -126,7 +131,7 @@
             <h2>연출팀</h2>
             <p>극의 모든것을 총괄한다. 렛미의 나침반</p>
             <a href="{% url "team" %}#team-produce">더보기 
-            <span class="fa fa-chevron-right"></span>
+              <span class="fa fa-chevron-right"></span>
             </a>
           </div>
 
@@ -135,12 +140,12 @@
             <h2>음악팀</h2>
             <p>렛미의 모든 음악이 거쳐가는 곳, 렛미 최강의 전문가집단!</p>
             <a href="{% url "team" %}#team-music">더보기 
-            <span class="fa fa-chevron-right"></span>
+              <span class="fa fa-chevron-right"></span>
             </a>
           </div> 
         </div> 
       </section>
-      
+
       <section class="conF">
         <div class="container">
           <div class="description"> 
@@ -148,18 +153,18 @@
             <p>정기공연 외에도 매 학기마다 모든 구성원이 다함께 준비하는 갈라쇼, YB와 OB가함께하는 렛미여행,
             <br> 뮤지컬 단체 관람, 플래시몹, 교내 공식 행사, 방송 출연 등 다양한 활동을 하고 있습니다.</p>
           </div>
-       
+
 
           {% for idx in "123456" %}
-            {% static "img/intro_photogrid" as index_photogrid_root %}
-            <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
+          {% static "img/intro_photogrid" as index_photogrid_root %}
+          <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
           {% endfor %} 
         </div>
 
-        
-      </section>
-      
-  {% endblock content %}
 
-  
+      </section>
+
+      {% endblock content %}
+
+
 
