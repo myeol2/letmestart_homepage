@@ -42,11 +42,12 @@
             // Optional parameters
 
             // If we need pagination
-            slidesPerView: 4,
-            spaceBetween: 30,
+            slidesPerView: {{slides_per_view}},
+            spaceBetween: 40,
             centeredSlides: true,
             pagination: {
               el: '.swiper-pagination',
+              clickable: 'true'
             },
 
             // Navigation arrows
@@ -170,10 +171,22 @@
           <h1></h1>
           <nav class="submenu-nav">
             <ul>
+              
+              {% if type_submenu == 'intro' %}
+
               <li><a href="{% url "intro" %}">렛미스타트는</a></li>
               <li><a href="{% url "team" %}">구성</a></li>
               <li><a href="{% url "greeting" %}?id=0">인사말</a></li>
 
+              {% elif type_submenu == 'activity' %}
+
+              <li><a href="{% url "play" %}">정기공연</a></li>
+              <li><a href="{% url "gala" %}">갈라쇼</a></li>
+              <li><a href="{% url "activity" %}?id=0">주요활동</a></li>
+
+              {% else %}
+
+              {% endif%}
             </ul>
         </div>
       </div>

@@ -1,5 +1,5 @@
 """
-WSGI config for js_tutorial project.
+WSGI config for letmestart project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'js_tutorial.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'letmestart.settings')
 
 application = get_wsgi_application()

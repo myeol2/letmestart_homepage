@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+{{ block.super }}
+{% endblock stylesheets %}
+
+{% block javascript %}
+{{ block.super}}
+{% endblock javascript %}
+
+{% block content %}
+
+{% static "" as baseUrl %}
+{{block.super}}
+<!-- Slider main container -->
+<section class="conB">
+  <div class="container">   
+    <div class="description">
+
+      <h1> 정기공연 </h1>
+      <p class="mid-width">정기공연은 렛미의 꽃! 렛미스타트의 모든 활동은 
+      정기공연을 위한 것이라고 해도 과언이 아닙니다. 
+      극의 선정부터 대본 각색, 넘버 해석, 무대 제작, 홍보와 기획까지 
+      렛미의 손을 거치지 않는 곳이 없습니다.   
+      제 1회 정기공연 '김종욱 찾기' 부터, 제 15회 정기공연 '소울라이트'까지 
+      1년에 2회씩 총 15회의 정기공연을 성공적으로 올렸습니다.
+      </p>          
+    </div>
+
+    <div class="swiper-container swiper-container-small">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+
+        <!-- Slides -->
+        {% if idx_play %}
+        {% for idx in idx_play %}
+          
+        <div class="swiper-slide"><img src="{{baseUrl}}/img/play_{{idx}}.jpg"></div>
+
+        {% endfor %}
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="play-profile">
+  <div class="container flex">
+
+    <div class="play-poster">
+
+      <img src="{{ baseUrl }}/img/play_15.jpg" alt="">
+    </div>
+
+    <div class="play-description text text-responsive">
+      <h1>제 15회 정기공연 <br> 소울라이트</h1>
+      <h3>시놉시스</h3>
+      <p>세계에서 가장 행복한 나라라고 불리는 '부탄'사람 니마는
+      자신의 파티원들과 MMORPG를 하던 중 최상급 영혼 아이템 '영혼의 빛'을 빼앗겼다.
+      아이템을 찾겠다는 이유로 그토록 오고 싶었던 서울.
+      파티원인 천재 프로그래머 덕희를 비롯해 20대 청년들이 모여 사는
+      강서구 청담 고시텔에 온다.
+      아시아 최고 IT도시, 속도와 자유가 있(어보이)는 서울을 동경해 온 부탄 사람 니마와
+      서울을 벗어날 수도 자신의 꿈에 다가가기도 벅찬 각기 다른 이유의 서울 청년들이 벌이는
+      고군분투 게임 공모 도전기!
+      각자 그토록 찾고 싶었던 것들을 화려해보이기만 하는 도시, 서울에서 찾을 수 있을까
+      우리에게도 빛이 올까?</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="play-people">
+
+  <div class="container">
+    <h1>등장인물</h1>
+    <div class="flex">
+      <img src="{%static 'img/casting_14_1.jpg'%}">
+      <img src="{%static 'img/casting_14_2.jpg'%}">
+      <img src="{%static 'img/casting_14_3.jpg'%}">
+    </div>
+
+    <h1>함께한 사람들</h1>
+    <p class="mid-width">윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
+    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
+    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아 </p>
+  </div>
+</section>
+
+<section class="play-photos">
+  <div class="container">
+    <h1>공연사진</h1>
+    <div class="flex photo-grid">
+      {% static "img/" as grid_root %}
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_1.jpg');">
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_6.jpg');">
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_2.jpg');">
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_4.jpg');">
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_3.jpg');">
+      <img class="grid-photo" style="background-image: url('{{grid_root}}intro_photogrid_5.jpg');">
+    </div>
+
+    <h1>공연 관련 영상</h1>
+    <div class="flex">
+      <div class="play-video">
+        <h3>티저 영상</h3>
+
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
+                scrolling="no" frameborder="0" 
+                               allowTransparency="true" 
+                               allow="encrypted-media" allowFullScreen="true"
+                                                       autoplay="true"></iframe>
+      </div>
+      <div class="play-video">
+        <h3>배우 인터뷰</h3>
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
+                scrolling="no" frameborder="0" 
+                               allowTransparency="true" 
+                               allow="encrypted-media" allowFullScreen="true"
+                                                       autoplay="true"></iframe>
+      </div>
+      <div class="play-video">
+        <h3>극 공개</h3>
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
+                scrolling="no" frameborder="0" 
+                               allowTransparency="true" 
+                               allow="encrypted-media" allowFullScreen="true"
+                                                       autoplay="true"></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock content %}
+
+
+

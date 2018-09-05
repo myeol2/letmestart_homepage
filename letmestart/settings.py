@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'HTMLCSS.apps.HtmlcssConfig',
+    'homepage.apps.HomepageConfig',
     'vue.apps.VueConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'js_tutorial.urls'
+ROOT_URLCONF = 'letmestart.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'js_tutorial.wsgi.application'
+WSGI_APPLICATION = 'letmestart.wsgi.application'
 
 
 # Database
