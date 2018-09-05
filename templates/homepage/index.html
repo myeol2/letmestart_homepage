@@ -50,7 +50,7 @@
 
             <h1> 렛미스타트는? </h1>
             <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-            제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
+            제 1회 정기공연 '김종욱 찾기' 부터 <br> 
             제 15회 정기공연 '소울라이트'까지 
             1년에 2회의 정기공연을 올리고 있습니다.
             </p>          
@@ -151,7 +151,7 @@
        
 
           {% for idx in "123456" %}
-            {% static "img/intro_photogrid" as photogrid_root %}
+            {% static "img/intro_photogrid" as index_photogrid_root %}
             <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
           {% endfor %} 
         </div>
