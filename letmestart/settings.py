@@ -24,11 +24,9 @@ SECRET_KEY = 'w)!0irug#)e0m&710g4odw+a%%o$f3a0^$((&w($^c4huu(_qs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+ 
 ALLOWED_HOSTS = [
-	'ec2-52-79-239-40.ap-northeast-2.compute.amazonaws.com',	
-	'52.79.239.40',
-	'localhost',
+	'letmestart.org'
 ]
 
 # Application definition
