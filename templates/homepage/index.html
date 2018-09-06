@@ -11,111 +11,108 @@
 {% endblock javascript %}
 
 {% block content %}
-     
-        <section class="conA sectionA">
-        <div class="container">
-          <div class="spacer"></div> 
-          <!--
-          <div class="fb-video"
-          data-href="https://www.facebook.com/letmestart/videos/1947738842192551/"
-          data-width="1180"
-          data-allowfullscreen="true"
-          ></div>
-          !-->
-          <!--
 
-          <h1>LETMESTART</h1>
-          <p>Find yourself with us</p>
-          <a href="#">로거 시작</a>
-          !--> 
-          <div class="iframe-wrap">
-          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616&&autoplay=1" 
-              scrolling="no" frameborder="0" 
-              allowTransparency="true" 
-              allow="encrypted-media" allowFullScreen="true"
-              autoplay="true"></iframe>
-          </div>
-            <!--
-          <img src="{% static 'img/다운로드.svg' %}" alt="">
-          <h1>LETMESTART</h1>
-          <p>Find yourself with us</p>
-          <a href="#">로거 시작</a>
-          --!>
+<section class="conA sectionA">
+  <!--
+    <div class="fb-video"
+    data-href="https://www.facebook.com/letmestart/videos/1947738842192551/"
+    data-width="1180"
+    data-allowfullscreen="true"
+    ></div>
+    !-->
+    <!--
+
+      <h1>LETMESTART</h1>
+      <p>Find yourself with us</p>
+      <a href="#">로거 시작</a>
+      !--> 
+      <div class="iframe-wrap">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&width=1400&appId=2124710811118616&&autoplay=1" 
+                width='1400' scrolling="no" frameborder="0" 
+                                            allowTransparency="true" 
+                                            allow="encrypted-media" allowFullScreen="true"
+                                                                    autoplay="true"></iframe>
+      </div>
+      <!--
+        <img src="{% static 'img/다운로드.svg' %}" alt="">
+        <h1>LETMESTART</h1>
+        <p>Find yourself with us</p>
+        <a href="#">로거 시작</a>
+        --!>
+        </section>
+
+        <section class="conB">
+        <div class="container">
+        <div class="description">
+
+        <h1> 렛미스타트는? </h1>
+        <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
+        제 1회 정기공연 '김종욱 찾기' 부터 <br> 
+        제 15회 정기공연 '소울라이트'까지 
+        1년에 2회의 정기공연을 올리고 있습니다.
+        </p>          
         </div>
-      </section>
 
-      <section class="conB">
-        <div class="container">
-          <div class="description">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
 
-            <h1> 렛미스타트는? </h1>
-            <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-            제 1회 정기공연 '김종욱 찾기' 부터 <br> 
-            제 15회 정기공연 '소울라이트'까지 
-            1년에 2회의 정기공연을 올리고 있습니다.
-            </p>          
+            {% if play_list %}
+            {% for play in play_list %}
+
+            <div class="swiper-slide">
+              <a href="{% url 'play' %}?id={{play.idx}}#profile">
+                <img src="{{play.poster.url}}">
+              </a>
+            </div>
+
+            {% endfor %}
+            {% else %}
+            <p>No polls are available.</p>
+            {% endif %}
+
+            ...
           </div>
-            
-          <!-- Slider main container -->
-          <div class="swiper-container">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                 
-                {% if play_list %}
-                {% for play in play_list %}
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
-                <div class="swiper-slide">
-                  <a href="{% url 'play' %}?id={{play.idx}}#profile">
-                    <img src="{{play.poster.url}}">
-                  </a>
-                </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
-                {% endfor %}
-                {% else %}
-                <p>No polls are available.</p>
-                {% endif %}
-
-                ...
-              </div>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination"></div>
-
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-
-          </div>       
+        </div>       
 
 
 
         </div> 
-      </section>
+        </section>
 
-      <section class="conE">
-        <div class="container">
-          <div class="description"> 
-            <h1>렛미스타트의 팀</h1>
-            <p>렛미스타트는 총 5개 팀으로 구성되어있으며, 완성도 있는 극을 올리기 위해 함께 노력합니다.</p>
-          </div>
-          <div class="text">
-            <span class="fa fa-bar-chart icon"></span>
-            <h2>기획팀</h2>
-            <p>렛미스타트의 살림꾼으로 각종 행사와 공연 홍보, 예매 등의 업무를 담당합니다</p>
-            <a href="{% url "team" %}#team-planning">더보기 
-              <span class="fa fa-chevron-right"></span>
-            </a>
-          </div>
+        <section class="conE">
+          <div class="container">
+            <div class="description"> 
+              <h1>렛미스타트의 팀</h1>
+              <p>렛미스타트는 총 5개 팀으로 구성되어있으며, 완성도 있는 극을 올리기 위해 함께 노력합니다.</p>
+            </div>
+            <div class="text">
+              <span class="fa fa-bar-chart icon"></span>
+              <h2>기획팀</h2>
+              <p>렛미스타트의 살림꾼으로 각종 행사와 공연 홍보, 예매 등의 업무를 담당합니다</p>
+              <a href="{% url "team" %}#team-planning">더보기 
+                <span class="fa fa-chevron-right"></span>
+              </a>
+            </div>
 
-          <div class="text">
-            <span class="fa fa-wrench icon"></span>
-            <h2>무대팀</h2>
-            <p>관객들을 새로운 세상으로 데려가기 위해 밤낮없이 고민하는 팀!</p>
-            <a href="{% url "team" %}#team-stage">더보기 
-              <span class="fa fa-chevron-right"></span>
-            </a>
-          </div>
+            <div class="text">
+              <span class="fa fa-wrench icon"></span>
+              <h2>무대팀</h2>
+              <p>관객들을 새로운 세상으로 데려가기 위해 밤낮없이 고민하는 팀!</p>
+              <a href="{% url "team" %}#team-stage">더보기 
+                <span class="fa fa-chevron-right"></span>
+              </a>
+            </div>
 
-          <div class="text">
+            <div class="text">
             <span class="fa fa-child icon"></span>
             <h2>배우팀</h2>
             <p>무대에서 만나게 될 얼굴들. 연습, 또 연습!</p>
