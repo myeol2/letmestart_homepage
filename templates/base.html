@@ -59,7 +59,7 @@
       })
       });
     </script>
-   
+  {% endblock %}   
     <script>
       function fnMove(name){
         var offset = $(name).offset();
@@ -68,41 +68,43 @@
     </script>
 
 
-    {% endblock javascript %}
- 
     <script>
-        $(function() {
-          $(window).scroll(function() {
-            if ($(this).scrollTop() > 400) {
-              $('#MOVE_TOP_BTN').fadeIn("fast");
-            } else {
-              $('#MOVE_TOP_BTN').fadeOut("fast");
-            }
-          });
+      $(function() {
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 400) {
+            $('#MOVE_TOP_BTN').fadeIn("fast");
+          } else {
+            $('#MOVE_TOP_BTN').fadeOut("fast");
+          }
+        });
 
-          $(window).scroll(function(){
-            if ($(this).scrollTop() > $('.sectionA').height()-150) {
-              $('header').addClass('active');
-            } else {
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > $('.sectionA').height()-150) {
+            $('header').addClass('active');
+          } else {
             //remove the background property so it comes transparent again (defined in your css)
-              $('header').removeClass("active");
-            }
-          });
+            $('header').removeClass("active");
+          }
+        });
 
-          $("#MOVE_TOP_BTN").click(function() {
-            $('html, body').animate({
-              scrollTop : 0
-            }, 400);
-            return false;
-          });
 
-          $(window).load(function(){
-            $(".se-pre-con").fadeOut("slow");
+        $("header > div > nav > ul > li:nth-child({{type_submenu}})").addClass('active');
+        $("#submenu-content > div > nav > ul > li:nth-child({{idx_submenu}})").addClass('active');
 
-          });
+
+        $("#MOVE_TOP_BTN").click(function() {
+          $('html, body').animate({
+            scrollTop : 0
+          }, 400);
+          return false;
+        });
+
+        $(window).load(function(){
+          $(".se-pre-con").fadeOut("slow");
 
         });
 
+      });
 /*
       $(window).load(function() {
         // Animate loader off screen 
@@ -113,6 +115,8 @@
      });*/
 
     </script>
+
+   
 
   </head>
 
@@ -181,17 +185,17 @@
           <nav class="submenu-nav">
             <ul>
               
-              {% if type_submenu == 'intro' %}
+              {% if type_submenu == 1 %}
 
               <li><a href="{% url "intro" %}">렛미스타트는</a></li>
               <li><a href="{% url "team" %}">구성</a></li>
               <li><a href="{% url "greeting" %}?id=0">인사말</a></li>
 
-              {% elif type_submenu == 'activity' %}
+              {% elif type_submenu == 2 %}
 
               <li><a href="{% url "play" %}">정기공연</a></li>
               <li><a href="{% url "gala" %}">갈라쇼</a></li>
-              <li><a href="{% url "activity" %}?id=0">주요활동</a></li>
+              <li><a href="{% url "activity" %}">주요활동</a></li>
 
               {% else %}
 

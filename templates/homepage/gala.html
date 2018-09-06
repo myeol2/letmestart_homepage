@@ -1,9 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
 
+{% block stylesheets %}
+{{ block.super }}
+{% endblock stylesheets %}
 
+{% block javascript %}
+{{ block.super}}
+{% endblock javascript %}
 
+{% block content %}
 
+{% static "" as baseUrl %}
+{{block.super}}
 
-
+{% endblock content %}
 
 
 

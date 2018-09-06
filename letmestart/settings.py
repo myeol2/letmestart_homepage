@@ -25,10 +25,7 @@ SECRET_KEY = 'w)!0irug#)e0m&710g4odw+a%%o$f3a0^$((&w($^c4huu(_qs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
  
-ALLOWED_HOSTS = [
-	'letmestart.org'
-]
-
+ALLOWED_HOSTS = '*'
 # Application definition
 
 INSTALLED_APPS = [
