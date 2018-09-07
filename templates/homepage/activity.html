@@ -23,19 +23,16 @@
 
     <div class="photo-text">
       <div class="text" style="text-align:left;">
-        <h1>렛미 여행</h1>
+        <h1>단체 관람</h1>
         <p>
-        술마시러 가는 대성리 MT는 굿-바이. 기획력 넘치는 렛미-인들이 준비하는 
-          제대로 된 힐링. 렛미 여행!
+        백문이 불여일견! 좋은 공연을 올리기 위헤서는 좋은 공연을 봐야 한다! 동아리원과 함께니 재미도 감동도 2배~     
         </p>
       </div>
       <div class="photo-grid">
         {% static "" as baseUrl %}
-        
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_1.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/intro_photogrid_4.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_3.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_4.jpg')"></div>
+        {% for idx in "1234" %} 
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/group_preview_{{idx}}.jpg')"></div>
+        {% endfor %}
       </div>
     </div>
 
@@ -49,11 +46,9 @@
       </div>
       <div class="photo-grid">
         {% static "" as baseUrl %}
-
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_1.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/intro_photogrid_4.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_3.jpg')"></div>
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_4.jpg')"></div>
+        {% for idx in "1234" %}
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_{{idx}}.jpg')"></div>
+        {% endfor %}
       </div>
     </div>
 
