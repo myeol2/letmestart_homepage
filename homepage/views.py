@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Play
-
+from .models import Gala
 # Create your views here.
 
 def index(request):
@@ -19,7 +19,7 @@ def index(request):
 
 
 def team(request):
-    
+
     type_submenu = 1
     idx_submenu = 2
     context = {
@@ -39,7 +39,7 @@ def contact(request):
 
 
 def intro(request):
-    
+
     type_submenu = 1
     idx_submenu = 1
     context={
@@ -64,14 +64,14 @@ def greeting(request):
 
 
 def play(request):
- 
+
     play_list = Play.objects.order_by('-idx')
     type_submenu = 2
     idx_submenu = 1
-    id = request.GET.get('id', len(play_list))
+    id = request.GET.get('id', play_list[0].idx)
     play = get_object_or_404(Play, idx=id)
     slides_per_view = 6
-    
+
     context={
             'play_list': play_list, 
             'play': play,
@@ -83,21 +83,21 @@ def play(request):
     return render(request, 'homepage/play.html', context=context)
 
 def gala(request):
-    
+
+    gala_list = Gala.objects.order_by('-idx')
     idx_submenu= 2
     type_submenu= 2 
-    id = request.GET.get('id','0')
-    gala_list = list(range(1,16))
+    id = request.GET.get('id',gala_list[0].idx)
     context={
             'type_submenu': type_submenu,
             'idx_submenu': idx_submenu,
-            'gala_list': reversed(gala_list),
+            'gala_list': gala_list,
             'id': id,
             }
     return render(request, 'homepage/gala.html', context=context)
 
 def activity(request):
-   
+
     idx_submenu=3
     type_submenu =2
 

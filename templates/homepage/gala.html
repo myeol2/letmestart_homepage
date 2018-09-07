@@ -7,6 +7,7 @@
 
 {% block javascript %}
 {{ block.super}}
+
 {% endblock javascript %}
 
 {% block content %}
@@ -36,8 +37,8 @@
       </div>
       <div class="photo-grid">
         {% for gala in gala_list %} 
-        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/gala_poster_{{gala}}.jpg'), url('../img/')">
-          <a href="#" class="img-description">셋리스트 보기</a>       
+        <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}'), url('../img/')">
+          <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">셋리스트 보기</a>       
         </div>
         {% endfor %}
       </div>

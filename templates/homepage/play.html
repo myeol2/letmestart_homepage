@@ -66,8 +66,10 @@
   <div class="container flex">
 
     <div class="play-poster">
-      
-      <img src="{{play.poster.url}}" alt="">
+       
+      <a data-fancybox="gallery" href="{{play.poster.url}}">
+        <img src="{{play.poster.url}}" alt="">
+      </a>
     </div>
 
     <div class="play-description text text-responsive">
@@ -86,9 +88,13 @@
 
   <div class="container">
     <h1>등장인물</h1>
-    <div class="flex">
+    <div class="flex photo-grid">
       {% for casting in play.castings.all %}
-      <img src="{{casting.casting.url}}">
+      <div class="grid-photo">
+        <a data-fancybox="gallery" href="{{casting.casting.url}}">  
+          <img src="{{casting.casting.url}}">
+        </a>
+      </div>
       {% endfor %}
     </div>
 
@@ -110,7 +116,11 @@
     <h1>공연사진</h1>
     <div class="flex photo-grid">
       {% for image in play.images.all %}
-        <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
+      <div class="grid-photo">
+        <a data-fancybox="gallery" href="{{image.image.url}}">  
+          <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
+        </a>
+      </div>
       {% endfor %}
     </div>
     {% endif %}
@@ -120,12 +130,14 @@
     <div class="flex">
       <div class="play-video">
         <h3>티저 영상</h3>
-
+        
+        <a data-fancybox="gallery" href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
                 scrolling="no" frameborder="0" 
                                allowTransparency="true" 
                                allow="encrypted-media" allowFullScreen="true"
                                                        autoplay="true"></iframe>
+        </a>
       </div>
       <div class="play-video">
         <h3>배우 인터뷰</h3>
