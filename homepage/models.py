@@ -20,6 +20,7 @@ class Play(models.Model):
             verbose_name='정기공연 회차',
             default=1,
             validators=[validators.MaxValueValidator(100), validators.MinValueValidator(1)],
+            unique=True,
             )
     title = models.CharField(
             verbose_name='공연 제목',
@@ -65,6 +66,7 @@ class Gala(models.Model):
     idx = models.PositiveIntegerField(
             verbose_name='갈라쇼 회차',
             validators=[validators.MaxValueValidator(100), validators.MinValueValidator(1)],            
+            unique=True,
             )
 
     poster = models.ImageField(
