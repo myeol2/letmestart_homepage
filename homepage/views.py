@@ -41,7 +41,7 @@ def contact(request):
 def intro(request):
     
     type_submenu = 1
-    idx_submenu = 2
+    idx_submenu = 1
     context={
             'type_submenu': type_submenu,
             'idx_submenu' : idx_submenu, 

@@ -8,30 +8,34 @@
 
 {{block.super}}
 
-<section id="team">
+<section id="activity">
 
   <div class="container">
     <div class='description'>
 
-      <h1> 구성 </h1>
-      <p> 렛미스타트는 기획, 무대, 배우, 연출, 음악팀으로 구성되어 있으며, <br>
-      최고의 극을 올리기 위해 함께 노력하고 있습니다.</p>
+      <h1> 주요 활동 </h1>
+      <p> 정기공연 외에도 매 학기마다 모든 구성원이 다함께 준비하는 갈라쇼, YB와 OB가함께하는 렛미여행, <br> 
+        뮤지컬 단체 관람, 플래시몹, 교내 공식 행사, 방송 출연 등 다양한 활동을 하고 있습니다.
+      </p>
       <a name="team-planning" class="anchor"> </a>
 
     </div>
 
+
     <div class="photo-text">
       <div class="photo-grid">
-        <img src="{% static 'img/team_planning.png'%}" alt="">
+        {% static "" as baseUrl %}
+        
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_1.jpg')"></div>
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/intro_photogrid_4.jpg')"></div>
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_3.jpg')"></div>
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_4.jpg')"></div>
       </div>
       <div class="text">
         <h1>기획팀</h1>
-        <p>기획팀은 페이스북 페이지와 인스타그램 계정 관리,
-        홍보영상 촬영및 제작, 연습실 예약, 홍보물(현수막/포스터/
-        팜플렛/티켓)제작과 주문, 회계 등의 세분화된 팀을 구성해
-        동아리 운영과 공연 준비에 차질이 생기지 않도록 다방면에서 힘 쓰고 있습니다.
-        또한 연출팀, 무대팀과 함께 공연 의상과 소품을 준비하는 일도 담당합니다.
-        공연 당일에도 기획팀원들은 스텝과 무대 크루로 공연장 안팎에서 활동하고 있습니다.
+        <p>
+        술마시러 가는 대성리 MT는 굿-바이. 기획력 넘치는 렛미-인들이 준비하는 
+          제대로 된 힐링. 렛미 여행!
         </p>
       </div>
       <a name="team-stage" class="anchor"></a>
