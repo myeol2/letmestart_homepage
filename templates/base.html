@@ -26,17 +26,19 @@
     <script src="https://use.fontawesome.com/926fe18a63.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script> 
-   
-    {% block javascript %}
+  
+
+    {% block swiper %}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.bundle.js"></script>
     <script>
       $(function(){
-        
 
-          $(window).ready(function () {
+
+        $(window).ready(function () {
 
           //initialize swiper when document ready
           var mySwiper = new Swiper ('.swiper-container', {
@@ -56,11 +58,13 @@
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
-        });
-      })
+          });
+        })
       });
     </script>
-  {% endblock %}   
+
+    {% endblock swiper %}
+    
     <script>
       function fnMove(name){
         var offset = $(name).offset();
@@ -93,10 +97,6 @@
             $('header').removeClass("active");
           }
         });
-
-
-        $("header > div > nav > ul > li:nth-child({{type_submenu}})").addClass('active');
-        $("#submenu-content > div > nav > ul > li:nth-child({{idx_submenu}})").addClass('active');
 
 
         $("#MOVE_TOP_BTN").click(function() {
@@ -186,12 +186,20 @@
 
 
       {% block content %}
+      <script>
+        $(function(){
+
+          $("header > div > nav > ul > li:nth-child({{type_submenu}})").addClass('active');
+          $("#submenu-content > div > nav > ul > li:nth-child({{idx_submenu}})").addClass('active');
+
+        });
+      </script>
       <div id="submenu-content" class="sectionA">
         <div class ="container">
           <h1></h1>
           <nav class="submenu-nav">
             <ul>
-              
+
               {% if type_submenu == 1 %}
 
               <li><a href="{% url "intro" %}">렛미스타트는</a></li>

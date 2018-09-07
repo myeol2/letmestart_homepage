@@ -52,7 +52,7 @@ def intro(request):
 
 def greeting(request):
 
-    type_submenu = 'intro'
+    type_submenu = 1
     idx_submenu = 3
     id = request.GET.get('id','0')
     context={
