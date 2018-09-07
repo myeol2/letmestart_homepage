@@ -6,6 +6,7 @@
 
 {% block content %}
 
+{% static "" as baseUrl %}
 {{block.super}}
 
 <section id="activity">
@@ -14,7 +15,7 @@
     <div class='description'>
 
       <h1> 주요 활동 </h1>
-      <p> 정기공연 외에도 매 학기마다 모든 구성원이 다함께 준비하는 갈라쇼, YB와 OB가함께하는 렛미여행, <br> 
+      <p> 정기공연과 갈라쇼 외에도 YB와 OB가함께하는 렛미여행, <br> 
         뮤지컬 단체 관람, 플래시몹, 교내 공식 행사, 방송 출연 등 다양한 활동을 하고 있습니다.
       </p>
 
@@ -29,7 +30,6 @@
         </p>
       </div>
       <div class="photo-grid">
-        {% static "" as baseUrl %}
         {% for idx in "1234" %} 
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/group_preview_{{idx}}.jpg')"></div>
         {% endfor %}
@@ -45,7 +45,6 @@
         </p>
       </div>
       <div class="photo-grid">
-        {% static "" as baseUrl %}
         {% for idx in "1234" %}
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_{{idx}}.jpg')"></div>
         {% endfor %}
@@ -62,7 +61,6 @@
         </p>
       </div>
       <div class="photo-grid">
-        {% static "" as baseUrl %}
 
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_1.jpg')"></div>
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/intro_photogrid_4.jpg')"></div>
@@ -82,8 +80,6 @@
         </p>
       </div>
       <div class="photo-grid">
-        {% static "" as baseUrl %}
-
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_1.jpg')"></div>
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/intro_photogrid_4.jpg')"></div>
         <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/travel_3.jpg')"></div>

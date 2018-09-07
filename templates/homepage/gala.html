@@ -14,6 +14,55 @@
 {% static "" as baseUrl %}
 {{block.super}}
 
+
+
+<section id="gala" class="secA">
+
+  <div class="container">
+    <div class='description'>
+
+      <h1> 갈라쇼 </h1>
+      <p> 렛미스타트에 갓 들어온 신입이 맞이할 가장 큰 이벤트, 갈라쇼!<br> 
+      관객들 앞에서 좋아하는 넘버를 연기하고, 동아리원들과 함께 단체 안무를 준비하는 등 
+      <br> 정기 공연 준비 과정을 미리 맛볼 수 있는 렛미스타트의 작은 축제입니다.
+      </p>
+
+    </div>
+
+
+    <div class="photo-text">
+      <div class="text">
+        <h1>역대 갈라쇼 정보</h1> 
+      </div>
+      <div class="photo-grid">
+        {% for gala in gala_list %} 
+        <div class= "grid-photo" style="background-image: url('{{baseUrl}}/img/gala_poster_{{gala}}.jpg'), url('../img/')">
+          <a href="#" class="img-description">셋리스트 보기</a>       
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <div class="photo-text">
+      <div class="text" style="text-align: right;">
+        <h1>렛미 여행</h1>
+        <p>
+        술마시러 가는 대성리 MT는 굿-바이. 기획력 넘치는 렛미-인들이 준비하는 
+        제대로 된 힐링. 렛미 여행!
+        </p>
+      </div>
+      <div class="photo-grid">
+        {% for gala in gala_list %}
+        {%endfor%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
 {% endblock content %}
 
 

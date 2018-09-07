@@ -87,9 +87,11 @@ def gala(request):
     idx_submenu= 2
     type_submenu= 2 
     id = request.GET.get('id','0')
+    gala_list = list(range(1,16))
     context={
             'type_submenu': type_submenu,
             'idx_submenu': idx_submenu,
+            'gala_list': reversed(gala_list),
             'id': id,
             }
     return render(request, 'homepage/gala.html', context=context)
@@ -98,6 +100,7 @@ def activity(request):
    
     idx_submenu=3
     type_submenu =2
+
     context={
             'type_submenu': type_submenu,
             'idx_submenu': idx_submenu,
