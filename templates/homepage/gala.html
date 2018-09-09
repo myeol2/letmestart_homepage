@@ -7,6 +7,21 @@
 
 {% block javascript %}
 {{ block.super}}
+  <script>
+    $(function(){
+      $(".modal-content").click(function(){
+        $("#modal").addClass("active");
+      })
+
+      $(".close").click(function(){
+        $("#modal").removeClass("active")
+      })
+
+      $(window).click(function(){
+        $("#modal").removeClass("active")
+      })
+    })
+  </script>
 
 {% endblock javascript %}
 
@@ -29,17 +44,15 @@
       </p>
 
     </div>
-
-
     <div class="photo-text">
       <div class="text">
         <h1>역대 갈라쇼 정보</h1> 
       </div>
       <div class="photo-grid">
         {% for gala in gala_list %} 
-        <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}'), url('../img/')">
-          <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">셋리스트 보기</a>       
-        </div>
+          <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}'), url('../img/')">
+            <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">셋리스트 보기</a>       
+          </div>
         {% endfor %}
       </div>
     </div>
