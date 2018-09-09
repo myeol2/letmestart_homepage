@@ -46,12 +46,21 @@
 
         $(window).ready(function () {
 
+          var perview; 
+
+          if($(this).width() < 600 ){
+            perview = 3;
+            }
+            else{
+             perview: {{slides_per_view}};
+            }
           //initialize swiper when document ready
           var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
 
             // If we need pagination
-            slidesPerView: {{slides_per_view}},
+
+            slidesPerView: {{slidesPerView}},
             spaceBetween: 40,
             centeredSlides: true,
             pagination: {
@@ -67,10 +76,12 @@
           });
         })
       });
+
+
     </script>
 
     {% endblock swiper %}
-    
+
 
     <script>
       function fnMove(name){
@@ -130,7 +141,7 @@
 
     </script>
 
-   
+
 
   </head>
 
@@ -144,15 +155,15 @@
       !--> 
       <header>
         <div class="container">
-            <button type="button" class="headC">
-              <span class="fa fa-bars" title="MENU"></span>
-            </button>
-            <div class="headA">
-              <a href="{% url "index" %}" >
+          <button type="button" class="headC">
+            <span class="fa fa-bars" title="MENU"></span>
+          </button>
+          <div class="headA">
+            <a href="{% url "index" %}" >
               <img id="logo-header" src="{% static 'img/letmestart_logo_real_white.svg' %}" alt=""/>
-              </a>
-            </div>
-            
+            </a>
+          </div>
+
           <nav class="headB"> 
             <ul>
               <li>
@@ -186,9 +197,9 @@
                 </ul>
               </li>
               <!--
-              <li><a href="{% url "contact" %}">문의</a></li>
-              !-->
-              </ul>
+                <li><a href="{% url "contact" %}">문의</a></li>
+                !-->
+            </ul>
           </nav>
         </div>
       </header>

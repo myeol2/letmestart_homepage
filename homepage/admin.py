@@ -25,10 +25,6 @@ class PlayImageInline(admin.TabularInline):
     model = PlayImage
     extra = 3
 
-class PlayMemberInline(admin.TabularInline):
-    model = PlayMember
-    extra = 15
-
 class PlayRelImageInline(admin.TabularInline):
     model = PlayRelImage
     extra = 6
@@ -39,11 +35,11 @@ class PlayVideoInline(admin.TabularInline):
 
 class PlayMemberInline(admin.TabularInline):
     model = PlayMember
-    extra = 15
+    extra = 3
 
 class PlayTeamPhotoInline(admin.TabularInline):
     model = PlayTeamPhoto
-    extra = 6
+    extra = 3
 
 
 class PlayAdmin(admin.ModelAdmin):
