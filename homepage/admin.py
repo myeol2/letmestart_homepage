@@ -10,6 +10,9 @@ from .models import PlayVideo
 from .models import Gala
 from .models import GalaSetlist
 from .models import GalaPhoto
+
+from .models import PlayMember
+from .models import PlayTeamPhoto
 # Register your models here.
 
 
@@ -34,8 +37,17 @@ class PlayVideoInline(admin.TabularInline):
     model = PlayVideo
     extra = 3
 
+class PlayMemberInline(admin.TabularInline):
+    model = PlayMember
+    extra = 15
+
+class PlayTeamPhotoInline(admin.TabularInline):
+    model = PlayTeamPhoto
+    extra = 6
+
+
 class PlayAdmin(admin.ModelAdmin):
-    inlines = [PlayCastingInline, PlayImageInline, PlayMemberInline, 
+    inlines = [PlayMemberInline, PlayTeamPhotoInline, PlayCastingInline, PlayImageInline,  
             PlayRelImageInline, PlayVideoInline,]
 
 admin.site.register(Play, PlayAdmin)
@@ -54,10 +66,21 @@ class GalaAdmin(admin.ModelAdmin):
 admin.site.register(Gala, GalaAdmin)
 
 
+""" DB 구조랑 등등 한번다시생각해보자.
+class PlayMemberAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = (
+            'admission_order_letme',
+            'team',
+            'position',
+            'name',
+            'major',
+            'admission_year',
+            )
+    list_filter = ('admission_order_letme',)
 
-
-
-
+admin.site.register(PlayMember, PlayMemberAdmin)
+"""
 
 
 

@@ -44,72 +44,6 @@ class Play(models.Model):
 
     def __str__(self):
         return ('제 %d회 정기공연 : %s' % (self.idx, self.title))
-
-class PlayMember(models.Model):
-    play = models.ForeignKey(Play, related_name="members", on_delete=models.CASCADE)
-    
-    PLANNING = u"기획"
-    STAGE = u"무대"
-    ACT = u"배우"
-    DIRECT = u"연출"
-    MUSIC = u"음악"
-    DANCE = u"안무"
-    
-    LEADER = u'공동대표'
-    PRESIDENT = u'회장'
-    VICE_PRESIDENT = u'부회장'
-    TEAM_LEADER = u'팀장'
-    TEAM_MEMBER = u'팀원'
-
-    TEAM_CHOICES=(
-            (PLANNING, u'기획'),
-            (STAGE, u'무대'),
-            (ACT, u'배우'),
-            (DIRECT, u'연출'),
-            (MUSIC, u'음악'),
-            (DANCE, u'안무(9기 이전)'),
-            )
-
-    POSITION_CHOICES=(
-            (LEADER, u'공동대표'),
-            (PRESIDENT, u'회장'),
-            (VICE_PRESIDENT, u'부회장'),
-            (TEAM_LEADER, u'팀장'),
-            (TEAM_MEMBER, u'팀원'),
-          )
-
-
-    admission_order_letme = models.IntegerField(
-                verbose_name=u'기수',
-                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(100)]
-                )
-    team = models.CharField(
-            verbose_name=u'팀',
-            max_length=2,
-            choices = TEAM_CHOICES,
-            )
-
-    
-    position = models.CharField(
-            choices = POSITION_CHOICES,
-            max_length=6,
-            default = TEAM_MEMBER 
-            )
-
-    name = models.CharField(
-                verbose_name=u'이름',
-                max_length=10, 
-            )
-    admission_year = models.IntegerField(
-                verbose_name=u"학번",
-                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(99)]
-                
-                )
-
-    major = models.CharField(
-                verbose_name=u"학과",
-                max_length=10,
-            )
 class PlayCasting(models.Model):
     play = models.ForeignKey(Play, related_name='castings', on_delete=models.CASCADE)
     casting = models.ImageField(
@@ -168,7 +102,107 @@ class GalaPhoto(models.Model):
             )
 
 
+class PlayTeamPhoto(models.Model):
+    play = models.ForeignKey(Play, related_name='teamphotos', on_delete=models.CASCADE)
+    group_photo = models.ImageField(
+                upload_to=play_media_path,
+                verbose_name='팀별사진'
+            )
+    
+    PLANNING = u"기획"
+    STAGE = u"무대"
+    ACT = u"배우"
+    DIRECT = u"연출"
+    MUSIC = u"음악"
+    DANCE = u"안무"
+    PRESIDENTS = u"대표"
+    LEADERS = u"임원"
+    
 
+    TEAM_CHOICES = (
+            (LEADERS, u'회장단/대표단'),
+            (PLANNING, u'기획'),
+            (STAGE, u'무대'),
+            (ACT, u'배우'),
+            (DIRECT, u'연출'),
+            (MUSIC, u'음악'),
+            (DANCE, u'안무(9기 이전)'),
+            (PRESIDENTS, u'대표'),
+            (LEADERS, u'임원'),
+            )
+
+    team = models.CharField(
+            verbose_name=u'팀',
+            max_length=2,
+            choices = TEAM_CHOICES,
+            )
+
+
+class PlayMember(models.Model):
+    play = models.ForeignKey(Play, related_name="members", on_delete=models.CASCADE)
+    
+    PLANNING = u"기획"
+    STAGE = u"무대"
+    ACT = u"배우"
+    DIRECT = u"연출"
+    MUSIC = u"음악"
+    DANCE = u"안무"
+    
+    LEADER = u'공동대표'
+    PRESIDENT = u'회장'
+    VICE_PRESIDENT = u'부회장'
+    TEAM_LEADER = u'팀장'
+    TEAM_MEMBER = u'팀원'
+
+    TEAM_CHOICES=(
+            (PLANNING, u'기획'),
+            (STAGE, u'무대'),
+            (ACT, u'배우'),
+            (DIRECT, u'연출'),
+            (MUSIC, u'음악'),
+            (DANCE, u'안무(9기 이전)'),
+            )
+
+    POSITION_CHOICES=(
+            (LEADER, u'공동대표'),
+            (PRESIDENT, u'회장'),
+            (VICE_PRESIDENT, u'부회장'),
+            (TEAM_LEADER, u'팀장'),
+            (TEAM_MEMBER, u'팀원'),
+          )
+
+
+    admission_order_letme = models.IntegerField(
+                verbose_name=u'기수',
+                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(100)]
+                )
+    team = models.CharField(
+            verbose_name=u'팀',
+            max_length=6,
+            choices = TEAM_CHOICES,
+            )
+
+    
+    position = models.CharField(
+            choices = POSITION_CHOICES,
+            max_length=6,
+            default = TEAM_MEMBER 
+            )
+
+    name = models.CharField(
+                verbose_name=u'이름',
+                max_length=10, 
+            )
+    admission_year = models.IntegerField(
+                verbose_name=u"학번",
+                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(99)]
+                
+                )
+
+    major = models.CharField(
+                verbose_name=u"학과",
+                max_length=10,
+            )
 
 
 
