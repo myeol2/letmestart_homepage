@@ -78,10 +78,11 @@ class PlayMember(models.Model):
             (TEAM_MEMBER, u'팀원'),
           )
 
-    name = models.CharField(
-                verbose_name=u'이름',
-                max_length=10, 
-            )
+
+    admission_order_letme = models.IntegerField(
+                verbose_name=u'기수',
+                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(100)]
+                )
     team = models.CharField(
             verbose_name=u'팀',
             max_length=2,
@@ -94,8 +95,11 @@ class PlayMember(models.Model):
             max_length=6,
             default = TEAM_MEMBER 
             )
-    
 
+    name = models.CharField(
+                verbose_name=u'이름',
+                max_length=10, 
+            )
     admission_year = models.IntegerField(
                 verbose_name=u"학번",
                 validators=[validators.MinValueValidator(0), validators.MaxValueValidator(99)]
@@ -106,12 +110,6 @@ class PlayMember(models.Model):
                 verbose_name=u"학과",
                 max_length=10,
             )
-
-    admission_order_letme = models.IntegerField(
-                verbose_name=u'기수',
-                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(100)]
-                )
-
 class PlayCasting(models.Model):
     play = models.ForeignKey(Play, related_name='castings', on_delete=models.CASCADE)
     casting = models.ImageField(
@@ -126,11 +124,11 @@ class PlayImage(models.Model):
             verbose_name='공연 사진'
             )
 
-class PlayPhoto(models.Model):
-    play = models.ForeignKEy(Play, related_name='photos', on_delete=models.CASCADE)
+class PlayRelImage(models.Model):
+    play = models.ForeignKey(Play, related_name='rel_images', on_delete=models.CASCADE)
     photo = models.ImageField(
             upload_to=play_media_path,
-            verbose_name='공연 준비 사진'
+            verbose_name='공연 관련 사진'
             )
 
 class PlayVideo(models.Model):

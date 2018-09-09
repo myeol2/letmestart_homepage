@@ -1,20 +1,33 @@
 from django.contrib import admin
 
 from .models import Play
-from .models import PlayImage
 from .models import PlayCasting
+from .models import PlayImage
+from .models import PlayMember
+from .models import PlayRelImage
 from .models import PlayVideo
+
 from .models import Gala
 from .models import GalaSetlist
 from .models import GalaPhoto
 # Register your models here.
 
+
 class PlayCastingInline(admin.TabularInline):
     model = PlayCasting
     extra = 3
 
+
 class PlayImageInline(admin.TabularInline):
     model = PlayImage
+    extra = 3
+
+class PlayMemberInline(admin.TabularInline):
+    model = PlayMember
+    extra = 15
+
+class PlayRelImageInline(admin.TabularInline):
+    model = PlayRelImage
     extra = 6
 
 class PlayVideoInline(admin.TabularInline):
@@ -22,7 +35,8 @@ class PlayVideoInline(admin.TabularInline):
     extra = 3
 
 class PlayAdmin(admin.ModelAdmin):
-    inlines = [PlayCastingInline, PlayImageInline, PlayVideoInline,]
+    inlines = [PlayCastingInline, PlayImageInline, PlayMemberInline, 
+            PlayRelImageInline, PlayVideoInline,]
 
 admin.site.register(Play, PlayAdmin)
 
