@@ -108,3 +108,23 @@ def activity(request):
             }
     return render(request, 'homepage/activity.html', context=context)
 
+def member(request):
+
+    play_list = Play.objects.order_by('-idx')
+    id = request.GET.get('id', play_list[0].idx)
+    play = get_object_or_404(Play, idx=id)
+    team_list = play.members.order_by('team').values_list('team', flat=True).distinct()
+    
+    members_planning = play.members.filter(team__iexact='기획')
+    members_stage = play.members.filter(team__iexact='무대')
+    members_act = play.members.filter(team__iexact='배우')
+    members_stage = play.members.filter(team__iexact='연출')
+    members_music = play.members.filter(team__iexact='음악')
+
+    context={
+            'play_list': play_list,
+            'play': play,
+            'team_list': team_list,
+            }
+
+    return render(request, 'homepage/member.html', context=context)
