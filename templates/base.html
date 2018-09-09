@@ -179,14 +179,16 @@
               <li>
                 <a href="{% url "recruit"%}">지원</a>
                 <ul>
-                  <li><a href="#">지원과정</a></li>
-                  <li><a href="#">면접</a></li>
-                  <li><a href="#">자주묻는질문</a></li>
+                  <li><a href="{% url "recruit" %}">지원과정</a></li>
+                  <!--<li><a href="#">면접</a></li>
+                    !-->
+                    <li><a href="{% url "FAQ" %}">자주묻는질문</a></li>
                 </ul>
               </li>
-
+              <!--
               <li><a href="{% url "contact" %}">문의</a></li>
-            </ul>
+              !-->
+              </ul>
           </nav>
         </div>
       </header>
@@ -237,14 +239,14 @@
       <footer>
         <div class="container">
 
-            <a href="{% url 'index' %}" >
-              <img src="{% static 'img/letmestart_logo_black.svg' %}" id="footer-logo"/>
-            </a>
-            
+          <a href="{% url 'index' %}" >
+            <img src="{% static 'img/letmestart_logo_black.svg' %}" id="footer-logo"/>
+          </a>
+
             <p>
-              공동대표 | 이민정: 010-0000-0000 
-              | 하윤지: 010-0000-0000 <br>
-              E-mail | letmerecruit@gmail.com 
+            공동대표 | 이민정: 010-0000-0000 
+            | 하윤지: 010-0000-0000 <br>
+            E-mail | letmerecruit@gmail.com 
             </p>
 
             <nav class="footer-sns">  
@@ -269,10 +271,10 @@
                 </li>
               </ul>
             </nav>
-          <div class="copyright">  
-            © Let me start. All rights reserved.
-          </div>
-        
+            <div class="copyright">  
+              © Let me start. All rights reserved.
+            </div>
+
         </div>
       </footer>
 

@@ -1,0 +1,76 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+{{ block.super }}
+{% endblock stylesheets %}
+
+{% block content %}
+
+{% static "" as baseUrl %}
+{{block.super}}
+<!-- Slider main container -->
+<section class="conB">
+	<div class="container">   
+		<div class="description">
+
+			<h1> 자주 묻는 질문 </h1>
+
+		</div>
+
+		<section class="recruit">
+
+			<div class="container">
+				<h1>Q1. 학번제한이 있는지 궁금합니다 .</h1>
+        <p class="mid-width">
+        A1. 렛미스타트 신입 모집은 단대불문 , 학번불문 , 나이불문입니다 .
+
+        </p>
+      </div>
+
+      <div class="container">
+        <h1>2. 학기 중, 방학 중 동아리 연습시간을 알고 싶습니다.</h1>
+        <p class="mid-width">
+        A2. 렛미스타트는 정기 공연을 준비하는데 있어서 많은 연습시간을 쏟고 있습니다 . 학기 중에는 갈라쇼 , 장터 , 홈커밍데이 , 체육대회와 같은 행사 및 소공연을 준비하고 , 방학 중에 연습팀은 주 5~6 회의 연습으로 하루 6~9 시간 정도의 연습을 , 무대팀과 기획팀은 정기적인 회의와 준비기간을 가집니다 .
+        </p>
+      </div>
+      <div class="container">
+        <h1>Q3.배우팀이 하고 싶은데 , 배우팀의 선발 기준은 무엇인가요 ?</h1>
+        <p class="mid-width">
+        A3. 노래 , 연기 , 안무를 중점적으로 고려하게 됩니다 . 하지만 절대적인 실력보다도 렛미스타트와 함께 극을 만들어나갈때 성장할 수 있는 가능성과 열정이 가장 중요합니다 . 실제로 렛미스타트에 들어와서 실력을 꽃피운 배우들이 많습니다 .
+        </p>
+      </div>
+      <div class="container">
+        <h1>Q4. 렛미스타트와 다른 동아리의 활동을 병행할 수 있을까요 ?</h1>
+        <p class="mid-width">
+      A4. 개인에 따라 다르므로 답변하기 힘드나 , 렛미스타트는 기본적으로 시간을 많이 쏟아야 하는 동아리라고 말씀드릴 수 있습니다 .
+
+        </p>
+      </div>
+      <div class="container">
+        <h1>Q5. 한 학기만 활동할 수 있을까요 ?</h1>
+        <p class="mid-width">
+        A5. 렛미스타트는 두 학기 연속 활동을 원칙으로 합니다 .
+
+        </p>
+      </div>
+
+			<div class="container">
+				<h1> Q6. 렛미스타트 배우팀 오디션 지정곡은 언제 알 수 있나요 ?</h1>
+				<p class="mid-width">
+A6. 오디션 지정곡은 오디션 약 1 주일 전 공지와 함께 지원서에 작성해주신 메일로 보내드립니다 . 메일을 못 받으시면 바로 연락주시기 바랍니다 .
+				</p>
+			</div>
+
+			<div class="container">
+				<h1> Q7. 안무팀은 따로 선발하지 않나요?</h1>
+				<p class="mid-width">
+A7. 렛미스타트 제 9 회 정기공연 동안 유예기간을 거쳐 , 안무팀은 연출팀과 함께 통폐합 되었습니다 . 기존 안무팀에 지원하시려던 분은 연출팀에 지원하시면 안무 , 동선 등의 역할을 맡게됩니다 .
+				<br><br>
+				</p>
+		</section>
+</section>
+{% endblock content %}
+

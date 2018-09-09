@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from django.shortcuts import get_object_or_404
 from .models import Play
 from .models import Gala
@@ -128,3 +129,10 @@ def member(request):
             }
 
     return render(request, 'homepage/member.html', context=context)
+
+def faq(request):
+
+    context ={
+            
+            }
+    return render(request, 'homepage/FAQ.html', context=context)

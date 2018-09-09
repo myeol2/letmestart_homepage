@@ -15,5 +15,6 @@ urlpatterns = [
         path('gala', views.gala, name="gala"),
         path('activity', views.activity, name="activity"),
         path('member', views.member, name="member"),
+        path('FAQ', views.faq, name="FAQ")
         ]
 
