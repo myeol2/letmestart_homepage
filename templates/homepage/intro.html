@@ -28,11 +28,12 @@
 
 {% block content %}
 
+{% static "" as baseUrl %}
 {{block.super}}
 
 
 
-<section class="conE">
+<section class="conB">
   <div class="container">
     <div class="description">
 
@@ -65,31 +66,39 @@
         <span class="counter">15</span>
         <span>개의 극을 올렸습니다.</span>
       </div>
+
     </div>
+    <div class="photo-text" style="padding:0; border-top:none;">
+      <div class="photo-grid intro">
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_7.jpg')">
+        </div>
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_8.jpg')">
+        </div>
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_10.jpg')">
+        </div>
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_11.jpg')">
+        </div>
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_12.jpg')">
+        </div>
+        <div class="grid-photo" style="background-image: url('{{baseUrl}}/img/play_groupphoto_13.jpg')">
+        </div>
+      </div>
+    </div>
+
+
 </section>   
 
-<section class="conB">
+<section class="conE">
   <div class="container">
     <div class="description">
-      <h1> 렛미스타트는? </h1>
-      <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-      제 15회 정기공연 '소울라이트'까지 
-      1년에 2회의 정기공연을 올리고 있습니다.
-      </p>          
+      <h1> 렛미스타트 연혁 </h1>
+      <div class="photo-text" style="border-top: none; padding:0;">
+        <div class="photo-grid">
+          <img src="{{baseUrl}}/img/history.png"> 
+        </div>
+      </div>
     </div>
-</section>   
-<section class="conB">
-  <div class="container">
-    <div class="description">
-
-      <h1> 렛미스타트는? </h1>
-      <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-      제 15회 정기공연 '소울라이트'까지 
-      1년에 2회의 정기공연을 올리고 있습니다.
-      </p>          
-    </div>
+  </div>
 </section>   
 
 {% endblock content %}
