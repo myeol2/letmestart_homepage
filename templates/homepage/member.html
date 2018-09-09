@@ -26,6 +26,11 @@
         </a>
       </div>
       {% endfor %}
+      <div class="member-btn-wrap empty"></div>
+      <div class="member-btn-wrap empty"></div>
+      <div class="member-btn-wrap empty"></div>
+      <div class="member-btn-wrap empty"></div>
+      <div class="member-btn-wrap empty"></div>
     </div>
 
 
@@ -36,18 +41,18 @@
       </div>
       <div class="text">
         <h1>{{team}}팀</h1>
-          <div class="member-list">
+        <div class="member-list">
           {% for member in play.members|in_team:team %}
           <p class="member">
           {{member.admission_order_letme}}기 {{member.name}} ({{member.major}} {{member.admission_year}})  
-            {% if member.position == "팀장" %}<b>[팀장]</b>{% endif %}
+          {% if member.position == "팀장" %}<b>[팀장]</b>{% endif %}
           </p>
           {% endfor %}
+        </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
 
-  </div>
+    </div>
 </section>
 
 
