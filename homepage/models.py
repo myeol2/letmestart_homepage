@@ -44,6 +44,8 @@ class Play(models.Model):
 
     def __str__(self):
         return ('제 %d회 정기공연 : %s' % (self.idx, self.title))
+
+
 class PlayCasting(models.Model):
     play = models.ForeignKey(Play, related_name='castings', on_delete=models.CASCADE)
     casting = models.ImageField(
@@ -214,7 +216,6 @@ class PlayMember(models.Model):
     
     def __str__(self):
         return "{0}기 {1} {2} {3}".format(self.admission_order_letme, self.team, self.position, self.name)
-
 
 
 

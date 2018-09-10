@@ -116,9 +116,11 @@
       
       <h1>함께한 사람들</h1>
       <p class="mid-width">
-	{% for name in play.members.all|distinct:'name' %}
-	  <span>{{name}} </span>
-	{% endfor %}
+      {% with members=play.members.all|distinct:"name"  %}
+        {% for member in members|dictsort:"name" %}
+          <span>{{member.name}} </span>
+        {% endfor %}
+      {% endwith %}
       </p>
 
       </div>

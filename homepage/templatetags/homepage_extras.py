@@ -12,7 +12,7 @@ def index(List, i):
 
 @register.filter
 def distinct(things, field):
-	return things.values_list(field,flat=True).distinct()
+	return things.values(field).distinct()
 
 
 
