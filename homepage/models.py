@@ -140,7 +140,11 @@ class PlayTeamPhoto(models.Model):
 
 class PlayMember(models.Model):
     play = models.ForeignKey(Play, related_name="members", on_delete=models.CASCADE)
-    
+   
+    class Meta:
+        ordering = ['-position', 'admission_order_letme', 'name']
+        verbose_name = "함께한 사람들"
+
     PLANNING = u"기획"
     STAGE = u"무대"
     ACT = u"배우"
@@ -203,9 +207,9 @@ class PlayMember(models.Model):
                 verbose_name=u"학과",
                 max_length=10,
             )
-
-
-
+    
+    def __str__(self):
+        return "{0}기 {1} {2} {3}".format(self.admission_order_letme, self.team, self.position, self.name)
 
 
 
