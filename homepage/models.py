@@ -67,8 +67,12 @@ class PlayRelImage(models.Model):
 
 class PlayVideo(models.Model):
     play = models.ForeignKey(Play, related_name='video_urls', on_delete=models.CASCADE)
+    category = models.CharField(
+            verbose_name='영상 이름',
+            max_length=10
+            )
     video_url = models.CharField(
-            verbose_name='공연 관련 링크(극 공개, 티저, 인터뷰순)',
+            verbose_name='공연 관련 링크(극 공개, 티저, 인터뷰순 )',
             max_length=200)
 
 class Gala(models.Model):

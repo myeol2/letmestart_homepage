@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load homepage_extras %}
 {% block stylesheets %}
 {{ block.super }}
 {% endblock stylesheets %}
@@ -127,34 +127,19 @@
 
     {% if play.video_urls.all %}
     <h1>공연 관련 영상</h1>
-    <div class="flex">
+    <div class="flex video-grid">
+      
+      {% for video in play.video_urls.all %}
       <div class="play-video">
-        <h3>티저 영상</h3>
+        <h3>{{video.category}}</h3>
         
-        <a data-fancybox="gallery" href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616">
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
-                scrolling="no" frameborder="0" 
-                               allowTransparency="true" 
-                               allow="encrypted-media" allowFullScreen="true"
-                                                       autoplay="true"></iframe>
-        </a>
-      </div>
-      <div class="play-video">
-        <h3>배우 인터뷰</h3>
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F{{video.video_url}}%2F&appId=2124710811118616" 
                 scrolling="no" frameborder="0" 
                                allowTransparency="true" 
                                allow="encrypted-media" allowFullScreen="true"
                                                        autoplay="true"></iframe>
       </div>
-      <div class="play-video">
-        <h3>극 공개</h3>
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&appId=2124710811118616" 
-                scrolling="no" frameborder="0" 
-                               allowTransparency="true" 
-                               allow="encrypted-media" allowFullScreen="true"
-                                                       autoplay="true"></iframe>
-      </div>
+      {% endfor %}
     </div>
     {% endif%}
   </div>
