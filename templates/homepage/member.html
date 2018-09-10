@@ -35,7 +35,7 @@
 
 
     {% for team in team_list %}
-    <div class="photo-text">
+    <div class="photo-text {% if forloop.counter|divisibleby:2 %} photo-right {% endif %}">
       <div class="photo-grid">
         {% for group_photo in play.teamphotos|in_team:team %}
         <div class="grid-photo" style="background-image: url('{{group_photo.group_photo.url}}')">
