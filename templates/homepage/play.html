@@ -99,9 +99,23 @@
     </div>
 
     <h1>함께한 사람들</h1>
-    <p class="mid-width">윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
-    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
-    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아 </p>
+    <p class="mid-width">
+      {% for member in play.members.all %}
+        <span>{{member.name}} </span>
+      {% endfor %}
+    </p>
+    
+    <h1>실황 사진</h1>
+    <div class="flex photo-grid">
+      {% for image in play.images.all %}
+      <div class="grid-photo">
+        <a data-fancybox="gallery" href="{{image.image.url}}">  
+          <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
   </div>
 </section>
 
@@ -113,9 +127,9 @@
   <div class="container">
 
     {% if play.images.all %}
-    <h1>공연사진</h1>
+    <h1>과정들</h1>
     <div class="flex photo-grid">
-      {% for image in play.images.all %}
+      {% for image in play.rel_images.all %}
       <div class="grid-photo">
         <a data-fancybox="gallery" href="{{image.image.url}}">  
           <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
