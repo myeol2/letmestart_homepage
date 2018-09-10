@@ -84,7 +84,7 @@
 
 {% if play.castings.all %}
 
-<section class="play-people">
+<section class="play-people play-photos">
 
   <div class="container">
     <h1>등장인물</h1>
@@ -98,16 +98,9 @@
       {% endfor %}
       </div>
 
-      <h1>함께한 사람들</h1>
-      <p class="mid-width">
-	{% for name in play.members.all|distinct:'name' %}
-	  <span>{{name}} </span>
-	{% endfor %}
-      </p>
-      </div>
-   
-    <h1>실황 사진</h1>
-    <div class="flex photo-grid">
+  
+      <h1>실황 사진</h1>
+      <div class="flex photo-grid">
       {% for image in play.images.all %}
       <div class="grid-photo">
         <a data-fancybox="gallery" href="{{image.image.url}}">  
@@ -115,8 +108,16 @@
         </a>
       </div>
       {% endfor %}
-    </div>
+      </div>
+      
+      <h1>함께한 사람들</h1>
+      <p class="mid-width">
+	{% for name in play.members.all|distinct:'name' %}
+	  <span>{{name}} </span>
+	{% endfor %}
+      </p>
 
+      </div>
   </div>
 </section>
 
@@ -127,20 +128,7 @@
 <section class="play-photos">
 <div class="container">
 
-{% if play.images.all %}
-<h1>공연사진</h1>
-<div class="flex photo-grid">
-{% for image in play.images.all %}
-<div class="grid-photo">
-<a data-fancybox="gallery" href="{{image.image.url}}">  
-<img class="grid-photo" style="background-image: url('{{image.image.url}}')">
-</a>
-</div>
-{% endfor %}
-</div>
-{% endif %}
-    
-{% if play.images.all %}
+{% if play.rel_images.all %}
     <h1>과정들</h1>
     <div class="flex photo-grid">
       {% for image in play.rel_images.all %}
