@@ -37,12 +37,10 @@
     {% for team in team_list %}
     <div class="photo-text">
       <div class="photo-grid">
-	<img src="{% static 'img/team_planning.png'%}">
-	<!--
-        {% for photo in play.teamphotos|in_team:team %}
-        <img src="{{photo.url}}" alt="">
+        {% for group_photo in play.teamphotos|in_team:team %}
+        <div class="grid-photo" style="background-image: url('{{group_photo.group_photo.url}}')">
+        </div>
         {% endfor %}
-	!-->
       </div>
       <div class="text">
         <h1>{{team}}팀</h1>
@@ -55,9 +53,9 @@
           {% endfor %}
         </div>
       </div>
-      {% endfor %}
-
     </div>
+    {% endfor %}
+
 </section>
 
 
