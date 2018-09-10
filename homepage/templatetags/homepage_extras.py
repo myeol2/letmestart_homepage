@@ -10,7 +10,9 @@ def in_team(things, team):
 def index(List, i):
     return List[int(i)]
 
-
+@register.filter
+def distinct(things, field):
+	return things.values_list(field,flat=True).distinct()
 
 
 

@@ -72,7 +72,7 @@ class PlayVideo(models.Model):
             max_length=10
             )
     video_url = models.CharField(
-            verbose_name='공연 관련 링크(극 공개, 티저, 인터뷰순 )',
+            verbose_name='공연 관련 링크(facebook viedo id, (극 공개, 티저, 인터뷰순으로 입력))',
             max_length=200)
 
 class Gala(models.Model):

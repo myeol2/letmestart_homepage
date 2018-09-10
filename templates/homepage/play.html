@@ -96,53 +96,55 @@
         </a>
       </div>
       {% endfor %}
-    </div>
+      </div>
 
-    <h1>함께한 사람들</h1>
-    <p class="mid-width">윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
-    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아
-    윤소람 손명균 황수신 이준희 정수아 윤소람 손명균 황수신 이준희 정수아 </p>
-  </div>
-</section>
+      <h1>함께한 사람들</h1>
+      <p class="mid-width">
+	{% for name in play.members.all|distinct:'name' %}
+	  <span>{{name}} </span>
+	{% endfor %}
+      </p>
+      </div>
+      </section>
 
 {% endif %}
 
 
 
 <section class="play-photos">
-  <div class="container">
+<div class="container">
 
-    {% if play.images.all %}
-    <h1>공연사진</h1>
-    <div class="flex photo-grid">
-      {% for image in play.images.all %}
-      <div class="grid-photo">
-        <a data-fancybox="gallery" href="{{image.image.url}}">  
-          <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
+{% if play.images.all %}
+<h1>공연사진</h1>
+<div class="flex photo-grid">
+{% for image in play.images.all %}
+<div class="grid-photo">
+<a data-fancybox="gallery" href="{{image.image.url}}">  
+<img class="grid-photo" style="background-image: url('{{image.image.url}}')">
+</a>
+</div>
+{% endfor %}
+</div>
+{% endif %}
 
-    {% if play.video_urls.all %}
-    <h1>공연 관련 영상</h1>
-    <div class="flex video-grid">
-      
-      {% for video in play.video_urls.all %}
-      <div class="play-video">
-        <h3>{{video.category}}</h3>
-        
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F{{video.video_url}}%2F&appId=2124710811118616" 
-                scrolling="no" frameborder="0" 
-                               allowTransparency="true" 
-                               allow="encrypted-media" allowFullScreen="true"
-                                                       autoplay="true"></iframe>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif%}
-  </div>
+{% if play.video_urls.all %}
+<h1>공연 관련 영상</h1>
+<div class="flex video-grid">
+
+{% for video in play.video_urls.all %}
+<div class="play-video">
+<h3>{{video.category}}</h3>
+
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F{{video.video_url}}%2F&appId=2124710811118616" 
+scrolling="no" frameborder="0" 
+allowTransparency="true" 
+allow="encrypted-media" allowFullScreen="true"
+autoplay="true"></iframe>
+</div>
+{% endfor %}
+</div>
+{% endif%}
+</div>
 
 </section>
 {% endblock content %}
