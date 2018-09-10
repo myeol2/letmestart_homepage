@@ -62,9 +62,12 @@
               {% for play in play_list %}
 
               <div class="swiper-slide">
-                <a href="{% url 'play' %}?id={{play.idx}}#profile">
+                <div>
+                  <a class="img-description" href="{% url 'play' %}?id={{play.idx}}">
+                    자세히 보기  
+                  </a>
                   <img src="{{play.poster.url}}">
-                </a>
+                </div>
               </div>
 
               {% endfor %}

@@ -10,10 +10,12 @@ def index(request):
     idx_submenu=1
     play_list = Play.objects.order_by('-idx')
     slides_per_view = 4 
+    initial_slide= 0
     context = {
             'play_list': play_list, 
             'idx_submenu': idx_submenu,
             'slides_per_view': slides_per_view,
+            'initial_slide': initial_slide,
             }
 
     return render(request, 'homepage/index.html', context=context)
@@ -72,7 +74,7 @@ def play(request):
     id = request.GET.get('id', play_list[0].idx)
     play = get_object_or_404(Play, idx=id)
     slides_per_view = 6
-
+    initial_slide = len(play_list)-int(id)
     context={
             'play_list': play_list, 
             'play': play,
@@ -80,6 +82,7 @@ def play(request):
             'type_submenu': type_submenu,
             'idx_submenu' : idx_submenu,
             'slides_per_view': slides_per_view, 
+            'initial_slide' : initial_slide,
             }
     return render(request, 'homepage/play.html', context=context)
 
