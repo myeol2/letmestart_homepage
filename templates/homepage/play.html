@@ -137,10 +137,10 @@
 {% if play.rel_images.all %}
     <h1>과정들</h1>
     <div class="flex photo-grid">
-      {% for image in play.rel_images.all %}
+      {% for photo in play.rel_images.all %}
       <div class="grid-photo">
-        <a data-fancybox="gallery" href="{{image.image.url}}">  
-          <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
+        <a data-fancybox="gallery" href="{{photo.photo.url}}">  
+          <img class="grid-photo" style="background-image: url('{{photo.photo.url}}')">
         </a>
       </div>
       {% endfor %}
