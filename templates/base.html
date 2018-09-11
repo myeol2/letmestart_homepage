@@ -97,7 +97,8 @@
       $(function() {
 
         $('.headC').click(function(){
-          $('.headB').slideToggle();
+          $('.m_menu').addClass('open');
+          $('.m_bg').css({display: "block"})
         });
 
 
@@ -206,6 +207,52 @@
         </div>
       </header>
 
+      <div class="m_bg">
+      </div>
+
+      <div class="m_menu">
+        <h1>
+          <a href="{% url "index" %}">
+            <img src="{% static 'img/letmestart_logo_real_white.svg' %}">  
+          </a>
+        </h1>
+        <p class="close_btn"></p>
+        <ul>
+          <li>
+            <p>소개</p>
+
+            <ul class="m_sub_menu">
+              <li><a href="{% url "intro" %}">렛미스타트</a></li>
+              <li><a href="{% url "team" %}">구성</a></li>
+              <li><a href="{% url "greeting" %}?id=0">인사말</a></li>
+            </ul>
+
+          </li>
+          <li>
+            <p>활동</p>
+
+            <ul class="m_sub_menu">
+              <li><a href="{% url "play" %}">정기공연</a></li>
+              <li><a href="{% url "gala" %}">갈라쇼</a></li>
+              <li><a href="{% url "activity" %}">주요활동</a></li>
+            </ul> 
+          </li>
+
+          <li>
+            <p>사람들</p>
+          </li>
+          
+          <li>
+            <p>지원</p>
+            <ul class="m_sub_menu">
+              <li><a href="{% url "recruit" %}">지원과정</a></li>
+              <!--<li><a href="#">면접</a></li>
+                !-->
+                <li><a href="{% url "FAQ" %}">자주묻는질문</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
       {% block content %}
       <script>
