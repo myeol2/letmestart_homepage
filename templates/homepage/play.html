@@ -151,7 +151,7 @@
     {% endif%}
 
 
-    <h1>함께한 사람들</h1>
+    <h1 style="border:none; text-align:center;">함께한 사람들</h1>
     <p class="mid-width">
     {% with members=play.members.all|distinct:"name"  %}
     {% for member in members|dictsort:"name" %}
