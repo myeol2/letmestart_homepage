@@ -70,7 +70,7 @@
   <div class="container flex">
 
     <div class="play-poster">
-       
+
       <a class="fancy-wrapper" data-fancybox="gallery" href="{{play.poster.url}}">
         <img src="{{play.poster.url}}" alt="">
       </a>
@@ -86,11 +86,13 @@
 
 </section>
 
-{% if play.castings.all %}
+
 
 <section class="play-people play-photos">
 
   <div class="container">
+
+    {% if play.castings.all %}
     <h1>등장인물</h1>
     <div class="flex photo-grid">
       {% for casting in play.castings.all %}
@@ -100,11 +102,12 @@
         </a>
       </div>
       {% endfor %}
-      </div>
+    </div>
+    {% endif %}
 
-  
-      <h1>실황 사진</h1>
-      <div class="flex photo-grid">
+    {% if play.images.all %}
+    <h1>실황 사진</h1>
+    <div class="flex photo-grid">
       {% for image in play.images.all %}
       <div class="grid-photo">
         <a data-fancybox="gallery" href="{{image.image.url}}">  
@@ -112,29 +115,11 @@
         </a>
       </div>
       {% endfor %}
-      </div>
-      
-      <h1>함께한 사람들</h1>
-      <p class="mid-width">
-      {% with members=play.members.all|distinct:"name"  %}
-        {% for member in members|dictsort:"name" %}
-          <span>{{member.name}} </span>
-        {% endfor %}
-      {% endwith %}
-      </p>
-
-      </div>
-  </div>
-</section>
-
-{% endif %}
+    </div>
+    {% endif %}
 
 
-
-<section class="play-photos">
-<div class="container">
-
-{% if play.rel_images.all %}
+    {% if play.rel_images.all %}
     <h1>과정들</h1>
     <div class="flex photo-grid">
       {% for photo in play.rel_images.all %}
@@ -150,11 +135,11 @@
     {% if play.video_urls.all %}
     <h1>공연 관련 영상</h1>
     <div class="flex video-grid">
-      
+
       {% for video in play.video_urls.all %}
       <div class="play-video">
         <h3>{{video.category}}</h3>
-        
+
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F{{video.video_url}}%2F&appId=2124710811118616" 
                 scrolling="no" frameborder="0" 
                                allowTransparency="true" 
@@ -164,6 +149,18 @@
       {% endfor %}
     </div>
     {% endif%}
+
+
+    <h1>함께한 사람들</h1>
+    <p class="mid-width">
+    {% with members=play.members.all|distinct:"name"  %}
+    {% for member in members|dictsort:"name" %}
+    <span>{{member.name}} </span>
+    {% endfor %}
+    {% endwith %}
+    </p>
+
+
   </div>
 </section>
 {% endblock content %}
