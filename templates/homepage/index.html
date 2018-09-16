@@ -24,7 +24,7 @@
       <p>Find yourself with us</p>
       <a href="#">로거 시작</a>
       !-->
-        <div class=iframe-wrap">
+        <div class="iframe-wrap">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fletmestart%2Fvideos%2F1947738842192551%2F&width=1400&appId=2124710811118616&&autoplay=1" 
         width='1400' scrolling="no" frameborder="0" 
         allowTransparency="true" 
@@ -148,6 +148,9 @@
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
 
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
               </div>
             </div> 
           </section>
@@ -161,12 +164,22 @@
               </div>
 
 
-              {% for idx in "123456" %}
-              {% static "img/intro_photogrid" as index_photogrid_root %}
-              <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
-              {% endfor %} 
-            </div>
+              <div class="swiper-container swiper-general">
+                <div class="swiper-wrapper">
+                  {% for idx in "123456" %}
+                  {% static "img/intro_photogrid" as index_photogrid_root %}
+                  <div class="swiper-slide">
+                    <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
+                  </div>
+                  {% endfor %} 
+                </div>
+                <div class="swiper-pagination"></div>
 
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+              </div>
+            </div>
 
           </section>
 
