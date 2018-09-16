@@ -324,12 +324,14 @@
               <li><a href="{% url "gala" %}">갈라쇼</a></li>
               <li><a href="{% url "activity" %}">주요활동</a></li>
 
-              {% else %}
+              {% elif type_submenu == 4 %}
 
               <li><a href="{% url "recruit" %}">지원과정</a></li>
               <li><a href="{% url "FAQ" %}">자주묻는질문</a></li>
 
-              {% endif%}
+              {% else %}
+
+              {% endif %}
             </ul>
         </div>
       </div>

@@ -117,7 +117,7 @@ def activity(request):
 
 def member(request):
 
-    type_submenu = 4;
+    type_submenu = 3;
     play_list = Play.objects.order_by('-idx')
     id = request.GET.get('id', play_list[0].idx)
     play = get_object_or_404(Play, idx=id)
