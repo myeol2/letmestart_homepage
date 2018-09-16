@@ -24,9 +24,11 @@ def index(request):
 def team(request):
 
     type_submenu = 1
+    submenu_title = "소개"
     idx_submenu = 2
     context = {
             'type_submenu': type_submenu, 
+            'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
             }
 
@@ -44,9 +46,11 @@ def contact(request):
 def intro(request):
 
     type_submenu = 1
+    submenu_title = "소개"
     idx_submenu = 1
     context={
             'type_submenu': type_submenu,
+            'submenu_title': submenu_title,
             'idx_submenu' : idx_submenu, 
             'id': id,
             }
@@ -56,10 +60,12 @@ def intro(request):
 def greeting(request):
 
     type_submenu = 1
+    submenu_title = "소개"
     idx_submenu = 3
     id = request.GET.get('id','0')
     context={
             'type_submenu' : type_submenu,
+            'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
             'id': id,
             }
@@ -70,6 +76,7 @@ def play(request):
 
     play_list = Play.objects.order_by('-idx')
     type_submenu = 2
+    submenu_title="활동"
     idx_submenu = 1
     id = request.GET.get('id', play_list[0].idx)
     play = get_object_or_404(Play, idx=id)
@@ -80,6 +87,7 @@ def play(request):
             'play': play,
             'id': id,
             'type_submenu': type_submenu,
+            'submenu_title': submenu_title,
             'idx_submenu' : idx_submenu,
             'slides_per_view': slides_per_view, 
             'initial_slide' : initial_slide,
@@ -91,10 +99,12 @@ def gala(request):
     gala_list = Gala.objects.order_by('-idx')
     idx_submenu= 2
     type_submenu= 2 
+    submenu_title="활동"
     id = request.GET.get('id',gala_list[0].idx)
     context={
             'type_submenu': type_submenu,
             'idx_submenu': idx_submenu,
+            'submenu_title': submenu_title,
             'gala_list': gala_list,
             'id': id,
             }
@@ -103,12 +113,14 @@ def gala(request):
 def activity(request):
 
     idx_submenu=3
-    type_submenu =2
-
+    type_submenu=2
+    submenu_title="활동"
     context={
             'type_submenu': type_submenu,
+            'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
             'id': id,
+
             }
     return render(request, 'homepage/activity.html', context=context)
 
