@@ -34,15 +34,6 @@ def team(request):
 
     return render(request, 'homepage/team.html', context=context)
 
-def recruit(request):
-
-    return render(request, 'homepage/recruit.html')
-
-def contact(request):
-
-    return render(request, 'homepage/contact.html')
-
-
 def intro(request):
 
     type_submenu = 1
@@ -126,6 +117,7 @@ def activity(request):
 
 def member(request):
 
+    type_submenu = 4;
     play_list = Play.objects.order_by('-idx')
     id = request.GET.get('id', play_list[0].idx)
     play = get_object_or_404(Play, idx=id)
@@ -141,13 +133,34 @@ def member(request):
             'play_list': play_list,
             'play': play,
             'team_list': team_list,
+            'type_submenu': type_submenu,
             }
 
     return render(request, 'homepage/member.html', context=context)
 
 def faq(request):
+    
+    type_submenu = 4;
+    idx_submenu=2
 
     context ={
-            
+            'idx_submenu':idx_submenu,
+            'type_submenu': type_submenu,
             }
     return render(request, 'homepage/FAQ.html', context=context)
+
+def recruit(request):
+    type_submenu = 4;
+    idx_submenu=1
+    context= {
+            'idx_submenu': idx_submenu,
+            'type_submenu': type_submenu,
+            }
+    
+    return render(request, 'homepage/recruit.html', context=context)
+
+def contact(request):
+
+    return render(request, 'homepage/contact.html')
+
+
