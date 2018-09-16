@@ -164,19 +164,10 @@
               </div>
 
 
-              <div class="swiper-container swiper-general">
-                <div class="swiper-wrapper">
-                  {% for idx in "123456" %}
-                  {% static "img/intro_photogrid" as index_photogrid_root %}
-                  <div class="swiper-slide">
-                    <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
-                  </div>
-                  {% endfor %} 
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+              {% for idx in "123456" %}
+              {% static "img/intro_photogrid" as index_photogrid_root %}
+              <div class="grid-photo" style="background-image: url('{{index_photogrid_root}}_{{idx}}.jpg')"></div>
+            {% endfor %} 
 
               </div>
             </div>
