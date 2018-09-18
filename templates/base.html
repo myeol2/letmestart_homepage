@@ -117,6 +117,20 @@ zxcmk
             console.log(swiperParams['slidesPerView']);
           }
           //initialize swiper when document ready
+
+          var mainSwiperParams = {
+            slidesPerView:1,
+            pagination:{
+              el: '.swiper-pagination',
+            },
+            loop: true,
+            speed: 800, 
+            autoplay: { 
+              delay:6000,
+            } 
+          }
+
+          var mainSwiper = new Swiper('.swiper-main', mainSwiperParams);
           var mySwiper = new Swiper ('.swiper-poster', swiperParams);
 
           var m_mySwiper = new Swiper ('.swiper-general', m_swiperParams);
