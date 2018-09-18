@@ -142,7 +142,7 @@
       {% for casting in play.castings.all %}
         <div class="swiper-slide">
           <a data-fancybox="gallery" href="{{casting.casting.url}}">  
-            <img style="max-height:400px; min-height:0;"src="{{casting.casting.url}}">
+            <img class="casting"src="{{casting.casting.url}}">
           </a>
         </div>
         {% endfor %}
