@@ -137,12 +137,12 @@
 
     {% if play.castings.all %}
     <h1>등장인물</h1>
-    <div class="swiper-container swiper-playphotos">
+    <div class="swiper-container swiper-playphotos" style="height:fit-content;">
       <div class="swiper-wrapper">
       {% for casting in play.castings.all %}
         <div class="swiper-slide">
           <a data-fancybox="gallery" href="{{casting.casting.url}}">  
-            <img style="background-image: url('{{casting.casting.url}}')">
+            <img style="max-height:400px; min-height:0;"src="{{casting.casting.url}}">
           </a>
         </div>
         {% endfor %}
