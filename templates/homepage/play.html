@@ -6,7 +6,50 @@
 {% endblock stylesheets %}
 
 {% block swiper %}
-{{ block.super}}
+{{block.super}}
+<script>
+
+  $(function(){
+
+    $(window).ready(function(){
+
+      var playSwiperParams = {
+        slidesPerView:3,
+        spaceBetween:0,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+
+          480: {
+            slidesPerView:1,
+          },
+
+          768:{
+            slidesPerView:2,
+          }
+
+        },
+
+      }
+      
+      var ww = $(window).width();
+
+      if (ww < 480){
+        playSwiperParams['slidesPerView']= 1;
+      }
+      console.log(playSwiperParams['slidesPerView']);
+      var playSwiper = new Swiper('.swiper-playphotos', playSwiperParams);
+    })
+
+
+})
+</script>
 {% endblock swiper %}
 
 {% block content %}
@@ -41,7 +84,7 @@
             <a class="img-description" href="{% url 'play'%}?id={{play.idx}}#playprofile">
               자세히 보기
             </a>
-            <img src="{{play.poster.url}}">
+            <img style="{{play.poster.url}}">
           </div>
 
         </div>
@@ -107,31 +150,42 @@
 
     {% if play.images.all %}
     <h1>실황 사진</h1>
-    <div class="flex photo-grid">
-      {% for image in play.images.all %}
-      <div class="grid-photo">
-        <a data-fancybox="gallery" href="{{image.image.url}}">  
-          <img class="grid-photo" style="background-image: url('{{image.image.url}}')">
-        </a>
+    <div class="swiper-container swiper-playphotos">
+      <div class="swiper-wrapper">
+        {% for image in play.images.all %}
+        <div class="swiper-slide">
+          <a data-fancybox="gallery" href="{{image.image.url}}">  
+            <img style="background-image: url('{{image.image.url}}')">
+          </a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
     {% endif %}
 
 
     {% if play.rel_images.all %}
     <h1>과정들</h1>
-    <div class="flex photo-grid">
+    <div class="swiper-container swiper-playphotos">
+      <div class="swiper-wrapper">
       {% for photo in play.rel_images.all %}
-      <div class="grid-photo">
+      <div class="swiper-slide">
         <a data-fancybox="gallery" href="{{photo.photo.url}}">  
-          <img class="grid-photo" style="background-image: url('{{photo.photo.url}}')">
+          <img style="background-image: url('{{photo.photo.url}}')">
         </a>
       </div>
       {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+        
     </div>
     {% endif %}
-
+    <!--
     {% if play.video_urls.all %}
     <h1>공연 관련 영상</h1>
     <div class="flex video-grid">
@@ -149,7 +203,7 @@
       {% endfor %}
     </div>
     {% endif%}
-
+    !-->
 
     <h1 style="border:none; text-align:center;">함께한 사람들</h1>
     <p class="mid-width">
