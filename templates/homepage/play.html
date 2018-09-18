@@ -84,7 +84,7 @@
             <a class="img-description" href="{% url 'play'%}?id={{play.idx}}#playprofile">
               자세히 보기
             </a>
-            <img style="{{play.poster.url}}">
+            <img src="{{play.poster.url}}">
           </div>
 
         </div>
@@ -137,14 +137,19 @@
 
     {% if play.castings.all %}
     <h1>등장인물</h1>
-    <div class="flex photo-grid">
+    <div class="swiper-container swiper-playphotos">
+      <div class="swiper-wrapper">
       {% for casting in play.castings.all %}
-      <div class="grid-photo">
-        <a data-fancybox="gallery" href="{{casting.casting.url}}">  
-          <img src="{{casting.casting.url}}">
-        </a>
+        <div class="swiper-slide">
+          <a data-fancybox="gallery" href="{{casting.casting.url}}">  
+            <img style="background-image: url('{{casting.casting.url}}')">
+          </a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
     {% endif %}
 
