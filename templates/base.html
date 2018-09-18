@@ -234,35 +234,41 @@ zxcmk
             <ul>
               <li>
                 <a href="{% url "intro" %}">소개</a>
-
+                <!--
                 <ul class="submenu">
                   <li><a href="{% url "intro" %}">렛미스타트</a></li>
                   <li><a href="{% url "team" %}">구성</a></li>
                   <li><a href="{% url "greeting" %}?id=0">인사말</a></li>
                 </ul>
-
+                !-->
               </li>
               <li>
                 <a href="{% url "play"%}">활동</a>
-
+                <!--
                 <ul class="submenu">
                   <li><a href="{% url "play" %}">정기공연</a></li>
                   <li><a href="{% url "gala" %}">갈라쇼</a></li>
                   <li><a href="{% url "activity" %}">주요활동</a></li>
-                </ul> 
+                </ul>
+                !-->
               </li>
 
               <li><a href="{% url "member" %}">사람들</a></li>
               <li>
                 <a href="{% url "recruit"%}">지원</a>
+                <!--
                 <ul class="submenu">
                   <li><a href="{% url "recruit" %}">지원과정</a></li>
                   <li><a href="{% url "FAQ" %}">자주묻는질문</a></li>
                 </ul>
-              </li>
-              <!--
-                <li><a href="{% url "contact" %}">문의</a></li>
                 !-->
+              </li>
+              <li>
+                <a style="cursor:default;">More</a>
+                <ul class="submenu">
+                  <li><a href="/admin">관리자</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
 
