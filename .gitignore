@@ -4,5 +4,6 @@ myvenv
 db.sqlite3
 /media
 /static
+**/homepage/migrations
 **/static/
 .DS_Store

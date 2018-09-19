@@ -47,6 +47,10 @@ class Play(models.Model):
 
 
 class PlayCasting(models.Model):
+
+    class Meta:
+        verbose_name_plural = "등장 인물(정기공연 페이지)"
+
     play = models.ForeignKey(Play, related_name='castings', on_delete=models.CASCADE)
     casting = models.ImageField(
             upload_to=play_media_path,
@@ -54,27 +58,41 @@ class PlayCasting(models.Model):
             )
 
 class PlayImage(models.Model):
+
+    class Meta:
+        verbose_name_plural = "실황 사진(정기공연 페이지: 무대가 잘 나온 사진, 배우 표정이 잘 드러난 사진 등)"
+
     play = models.ForeignKey(Play, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(
             upload_to=play_media_path,
-            verbose_name='공연 사진'
+            verbose_name='실황 사진'
             )
 
 class PlayRelImage(models.Model):
+
+    class Meta:
+        verbose_name_plural = "과정들(정기공연 페이지: 무대 제작, 공연 당일 준비과정, 무대 설치, 연습 과정 등 생동감있는 사진 위주)"
+
+
     play = models.ForeignKey(Play, related_name='rel_images', on_delete=models.CASCADE)
     photo = models.ImageField(
             upload_to=play_media_path,
-            verbose_name='공연 관련 사진'
+            verbose_name='과정들'
             )
 
 class PlayVideo(models.Model):
+
+    class Meta:
+        verbose_name_plural = "관련 영상(정기공연 페이지| 링크는 facebook video 게시글의 id를 입력하면 됨. ex:1947738842192551)"
+
+
     play = models.ForeignKey(Play, related_name='video_urls', on_delete=models.CASCADE)
     category = models.CharField(
             verbose_name='영상 이름',
             max_length=10
             )
     video_url = models.CharField(
-            verbose_name='공연 관련 링크(facebook viedo id, (극 공개, 티저, 인터뷰순으로 입력))',
+            verbose_name='공연 관련 링크(극 공개, 인터뷰, 티저순으로 입력)',
             max_length=200)
 
 class Gala(models.Model):
@@ -109,6 +127,10 @@ class GalaPhoto(models.Model):
 
 
 class PlayTeamPhoto(models.Model):
+
+    class Meta:
+        verbose_name_plural="팀별사진(사람들 페이지. 정기공연별로 프로필을 촬영하므로 이 위치에 삽입)"
+
     play = models.ForeignKey(Play, related_name='teamphotos', on_delete=models.CASCADE)
     group_photo = models.ImageField(
                 upload_to=play_media_path,
@@ -149,7 +171,7 @@ class PlayMember(models.Model):
    
     class Meta:
         ordering = ['admission_order_letme', 'name']
-        verbose_name = "함께한 사람들"
+        verbose_name_plural = "함께한 사람들(정기공연 페이지, 사람들 페이지, 공동대표 인사말 페이지에 모두 사용됨)"
 
     PLANNING = u"기획"
     STAGE = u"무대"
@@ -217,20 +239,36 @@ class PlayMember(models.Model):
     def __str__(self):
         return "{0}기 {1} {2} {3}".format(self.admission_order_letme, self.team, self.position, self.name)
 
+class Etc(models.Model):
+    idx = models.IntegerField(
+                verbose_name=u'기수',
+                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(99)],
+            )
 
 
+class EtcChief(models.Model):
+
+    class Meta:
+        verbose_name_plural = "대표 정보(홈페이지 하단)"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    etc = models.ForeignKey(Etc, related_name="chiefs", on_delete=models.CASCADE)
+    POSITION_CHOICES = (
+            (u'공동대표', u'공동대표'),
+            (u'회장', u'회장'),
+            (u'부회장', u'부회장'),
+            )
+    position = models.CharField(
+                verbose_name=u'직책',
+                max_length=5,
+                choices = POSITION_CHOICES,
+            )
+    name = models.CharField(
+                verbose_name=u'이름',
+                max_length=6,
+            )
+    phone_number = models.CharField(
+                verbose_name=u'연락처',
+                max_length=13,
+            )
 

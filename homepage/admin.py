@@ -6,13 +6,14 @@ from .models import PlayImage
 from .models import PlayMember
 from .models import PlayRelImage
 from .models import PlayVideo
+from .models import PlayTeamPhoto
 
 from .models import Gala
 from .models import GalaSetlist
 from .models import GalaPhoto
 
-from .models import PlayMember
-from .models import PlayTeamPhoto
+from .models import Etc
+from .models import EtcChief
 # Register your models here.
 
 
@@ -61,6 +62,14 @@ class GalaAdmin(admin.ModelAdmin):
 
 admin.site.register(Gala, GalaAdmin)
 
+
+class EtcChiefInline(admin.TabularInline):
+    model = EtcChief
+
+class EtcAdmin(admin.ModelAdmin):
+    inlines = [EtcChiefInline,]
+
+admin.site.register(Etc, EtcAdmin)
 
 """ DB 구조랑 등등 한번다시생각해보자.
 class PlayMemberAdmin(admin.ModelAdmin):

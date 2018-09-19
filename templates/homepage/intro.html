@@ -39,8 +39,8 @@
 
       <h1> 렛미스타트는? </h1>
       <p> 렛미스타트는 서울대학교 내 유일한 뮤지컬 동아리로  
-      제 1회 정기공연 '오! 당신이 잠든 사이' 부터 <br> 
-      제 15회 정기공연 '소울라이트'까지 
+      제 1회 정기공연 '김종욱 찾기' 부터 <br> 
+      제 {{recent_play.idx}}회 정기공연 '{{recent_play.title}}'까지 
       1년에 2회의 정기공연을 올리고 있습니다.
       </p>
     </div>
@@ -53,17 +53,17 @@
       </div>
 
       <div class="wrap-counter">  
-        <span class="counter">225</span>
+        <span class="counter">{{num_of_members}}</span>
         <span>명이</span>
       </div>
 
       <div class="wrap-counter">  
-        <span class="counter">12889</span>
+        <span class="counter">{{num_of_audiences}}</span>
         <span>명의 관객 앞에서</span>
       </div>
 
       <div class="wrap-counter">  
-        <span class="counter">15</span>
+        <span class="counter">{{recent_play.idx}}</span>
         <span>개의 극을 올렸습니다.</span>
       </div>
 

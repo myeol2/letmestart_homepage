@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
+from django.db.models import Sum
 from django.shortcuts import get_object_or_404
 from .models import Play
+from .models import PlayMember
 from .models import Gala
 # Create your views here.
 
@@ -9,6 +10,7 @@ def index(request):
    
     idx_submenu=1
     play_list = Play.objects.order_by('-idx')
+    recent_play = play_list[0]
     slides_per_view = 4 
     initial_slide= 0
     context = {
@@ -39,11 +41,18 @@ def intro(request):
     type_submenu = 1
     submenu_title = "소개"
     idx_submenu = 1
+    
+    recent_play = Play.objects.all().order_by('-idx')[0]
+    num_of_members = len(PlayMember.objects.all().values('admission_order_letme', 'admission_year', 'name').distinct())
+    num_of_audiences = Play.objects.values().aggregate(total_price=Sum('num_of_audience'))['total_price']
     context={
             'type_submenu': type_submenu,
             'submenu_title': submenu_title,
             'idx_submenu' : idx_submenu, 
             'id': id,
+            'recent_play' : recent_play,
+            'num_of_members' : num_of_members,
+            'num_of_audiences' : num_of_audiences
             }
 
     return render(request, 'homepage/intro.html', context=context)
