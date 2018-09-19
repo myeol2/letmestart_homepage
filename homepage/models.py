@@ -171,7 +171,7 @@ class PlayMember(models.Model):
    
     class Meta:
         ordering = ['admission_order_letme', 'name']
-        verbose_name_plural = "함께한 사람들(정기공연 페이지, 사람들 페이지, 공동대표 인사말 페이지에 모두 사용됨)"
+        verbose_name_plural = "함께한 사람들(정기공연 페이지, 사람들 페이지에 모두 사용됨)"
 
     PLANNING = u"기획"
     STAGE = u"무대"
@@ -246,10 +246,13 @@ class Etc(models.Model):
             )
 
 
+    def __str__(self):
+        return "{0}기 기타 정보".format(self.idx)
+
 class EtcChief(models.Model):
 
     class Meta:
-        verbose_name_plural = "대표 정보(홈페이지 하단)"
+        verbose_name_plural = "대표 정보(홈페이지 하단, 대표 인사말 페이지)"
 
 
     etc = models.ForeignKey(Etc, related_name="chiefs", on_delete=models.CASCADE)
@@ -271,4 +274,16 @@ class EtcChief(models.Model):
                 verbose_name=u'연락처',
                 max_length=13,
             )
+
+    admission_year = models.IntegerField(
+                verbose_name=u"학번",
+                validators=[validators.MinValueValidator(0), validators.MaxValueValidator(99)]
+                
+                )
+
+    major = models.CharField(
+                verbose_name=u"학과(간단하게 해도 좋음 ex. 전기정보공학부 -> 전기정보 혹은 전기)",
+                max_length=10,
+            )
+    
 

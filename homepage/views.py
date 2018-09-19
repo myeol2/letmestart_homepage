@@ -4,7 +4,10 @@ from django.shortcuts import get_object_or_404
 from .models import Play
 from .models import PlayMember
 from .models import Gala
+from .models import Etc
 # Create your views here.
+
+chiefs = Etc.objects.all().order_by('-idx')[0].chiefs.all() 
 
 def index(request):
    
@@ -13,11 +16,13 @@ def index(request):
     recent_play = play_list[0]
     slides_per_view = 4 
     initial_slide= 0
+
     context = {
             'play_list': play_list, 
             'idx_submenu': idx_submenu,
             'slides_per_view': slides_per_view,
             'initial_slide': initial_slide,
+            'chiefs' : chiefs,            
             }
 
     return render(request, 'homepage/index.html', context=context)
@@ -32,6 +37,7 @@ def team(request):
             'type_submenu': type_submenu, 
             'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
+            'chiefs' : chiefs,            
             }
 
     return render(request, 'homepage/team.html', context=context)
@@ -52,7 +58,8 @@ def intro(request):
             'id': id,
             'recent_play' : recent_play,
             'num_of_members' : num_of_members,
-            'num_of_audiences' : num_of_audiences
+            'num_of_audiences' : num_of_audiences,
+            'chiefs' : chiefs,            
             }
 
     return render(request, 'homepage/intro.html', context=context)
@@ -68,6 +75,7 @@ def greeting(request):
             'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
             'id': id,
+            'chiefs' : chiefs,            
             }
     return render(request, 'homepage/greeting.html', context=context)
 
@@ -91,6 +99,7 @@ def play(request):
             'idx_submenu' : idx_submenu,
             'slides_per_view': slides_per_view, 
             'initial_slide' : initial_slide,
+            'chiefs' : chiefs,            
             }
     return render(request, 'homepage/play.html', context=context)
 
@@ -107,6 +116,7 @@ def gala(request):
             'submenu_title': submenu_title,
             'gala_list': gala_list,
             'id': id,
+            'chiefs' : chiefs,            
             }
     return render(request, 'homepage/gala.html', context=context)
 
@@ -120,6 +130,7 @@ def activity(request):
             'submenu_title': submenu_title,
             'idx_submenu': idx_submenu,
             'id': id,
+            'chiefs' : chiefs,            
 
             }
     return render(request, 'homepage/activity.html', context=context)
@@ -143,6 +154,7 @@ def member(request):
             'play': play,
             'team_list': team_list,
             'type_submenu': type_submenu,
+            'chiefs' : chiefs,            
             }
 
     return render(request, 'homepage/member.html', context=context)
@@ -155,6 +167,7 @@ def faq(request):
     context ={
             'idx_submenu':idx_submenu,
             'type_submenu': type_submenu,
+            'chiefs' : chiefs,            
             }
     return render(request, 'homepage/FAQ.html', context=context)
 
@@ -164,6 +177,7 @@ def recruit(request):
     context= {
             'idx_submenu': idx_submenu,
             'type_submenu': type_submenu,
+            'chiefs' : chiefs,            
             }
     
     return render(request, 'homepage/recruit.html', context=context)

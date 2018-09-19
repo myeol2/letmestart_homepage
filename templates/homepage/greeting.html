@@ -33,7 +33,11 @@
     <img src="{% static 'img/leader.jpg' %}">
 
     <div class="text">
-      <h3>이광표 (물리 14)<br>김소연 (심리 18)</h3> 
+      <h3>
+        {% for chief in chiefs %}
+        {{chief.name}} ({{chief.major}} {{chief.admission_year}}) <br>
+        {% endfor %}
+      </h3> 
       
       <p class="greeting-text mid-width border-top"> 
         2011년, 뮤지컬을 좋아하는 어린 청춘들이 모여 

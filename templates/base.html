@@ -363,8 +363,9 @@ zxcmk
           </a>
 
             <p>
-            공동대표 이광표: 010-0000-0000 <br> 
-            공동대표 김소연: 010-0000-0000 <br>
+            {% for chief in chiefs %} 
+            {{chief.position}} {{chief.name}} : {{chief.phone_number}} <br> 
+            {% endfor %}
             E-mail | letmerecruit@gmail.com 
             </p>
 
