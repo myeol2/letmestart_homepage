@@ -44,8 +44,6 @@ zxcmk
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.bundle.js"></script>
     <script>
       $(function(){
 
@@ -151,7 +149,12 @@ zxcmk
 
 
     <script>
+
       $(function() {
+        $(window).load(function(){
+          $(".se-pre-con").fadeOut("slow");
+
+        });
 
         $('.headC').click(function(){
           $('.headB.m_menu').slideToggle();
@@ -186,30 +189,12 @@ zxcmk
           }, 400);
           return false;
         });
-
-        $(window).load(function(){
-          $(".se-pre-con").fadeOut("slow");
-
-        });
-
       });
-/*
-      $(window).load(function() {
-        // Animate loader off screen 
-        $("iframe").load(function(){
-          $(".se-pre-con").fadeOut("slow");;
-        })
-
-     });*/
-
     </script>
-
-
-
   </head>
 
   <body>
-
+    <img src="{% static 'img/preloader.gif' %}" width=1 height=1>
     <div class="se-pre-con"></div> 
 
     <!--
