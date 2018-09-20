@@ -145,18 +145,19 @@ class PlayTeamPhoto(models.Model):
     DANCE = u"안무"
     PRESIDENTS = u"대표"
     LEADERS = u"임원"
-    
+    ALL = u"단체" 
 
     TEAM_CHOICES = (
-            (LEADERS, u'회장단/대표단'),
+            (ALL, u"단체"),
+            (PRESIDENTS, u'회장단/대표단'),
+            (LEADERS, u'임원'),
             (PLANNING, u'기획'),
             (STAGE, u'무대'),
             (ACT, u'배우'),
             (DIRECT, u'연출'),
             (MUSIC, u'음악'),
             (DANCE, u'안무(9기 이전)'),
-            (PRESIDENTS, u'대표'),
-            (LEADERS, u'임원'),
+
             )
 
     team = models.CharField(
