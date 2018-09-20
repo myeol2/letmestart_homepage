@@ -44,6 +44,15 @@
       </p>
 
     </div>
+
+    <div class="photo-grid">
+    {% for idx in "123456" %}
+    {% static "img/gala_photogrid" as gala_photogrid_root %}
+    <div class="grid-photo" style="background-image: linear-gradient(rgba(24,3,42,0.2),rgba(0,0,0,0.1)), url('{{gala_photogrid_root}}_{{idx}}.jpg')"></div>
+    {% endfor %} 
+    </div>
+
+
     <div class="photo-text">
       <div class="text">
         <h1>역대 갈라쇼 정보</h1> 
@@ -51,7 +60,7 @@
       <div class="photo-grid">
         {% for gala in gala_list %} 
           <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}'), url('../img/')">
-            <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">셋리스트 보기</a>       
+            <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">크게 보기</a>       
           </div>
         {% endfor %}
       </div>
