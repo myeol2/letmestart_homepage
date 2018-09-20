@@ -37,14 +37,39 @@
         },
 
       }
-      
+     
+      var playCastingParams = {
+        slidesPerView:'auto',
+        spaceBetween:0,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+
+          480: {
+            slidesPerView:1,
+          },
+
+          768:{
+            slidesPerView:2,
+          }
+
+        },
+      }
+
       var ww = $(window).width();
 
       if (ww < 480){
         playSwiperParams['slidesPerView']= 1;
+        playCastingParams['slidesPerView']= 1;
       }
-      console.log(playSwiperParams['slidesPerView']);
       var playSwiper = new Swiper('.swiper-playphotos', playSwiperParams);
+      var playCastingSwiper = new Swiper('.swiper-playcastings', playCastingParams);
     })
 
 
@@ -137,7 +162,7 @@
 
     {% if play.castings.all %}
     <h1>등장인물</h1>
-    <div class="swiper-container swiper-playphotos" style="height:fit-content;">
+    <div class="swiper-container swiper-playcastings" style="height:fit-content;">
       <div class="swiper-wrapper">
       {% for casting in play.castings.all %}
         <div class="swiper-slide">
@@ -147,9 +172,9 @@
         </div>
         {% endfor %}
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination mobile-only"></div>
+      <div class="swiper-button-next mobile-only"></div>
+      <div class="swiper-button-prev mobile-only"></div>
     </div>
     {% endif %}
 
