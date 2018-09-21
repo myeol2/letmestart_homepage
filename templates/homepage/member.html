@@ -45,7 +45,7 @@
       <div class="text">
         <h1>{{team}}팀</h1>
         <div class="member-list">
-          {% for member in play.members|in_team:team %}
+          {% for member in play.members|in_team:team|distinct_member %}
           <p class="member">
           {{member.admission_order_letme}}기 {{member.name}} ({{member.major}} {{member.admission_year}})  
           {% if member.position == "팀장" %}<b>[팀장]</b>{% endif %}
