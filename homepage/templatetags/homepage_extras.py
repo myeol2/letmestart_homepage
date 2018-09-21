@@ -1,4 +1,5 @@
 from django import template
+from django.db.models import Max
 
 register = template.Library()
 
@@ -14,8 +15,9 @@ def index(List, i):
 def distinct(things, field):
 	return things.values(field).distinct()
 
-
-
+@register.filter
+def distinct_member(things):
+    return things.values('admission_order_letme', 'name', 'admission_year', 'major').order_by().annotate(position=Max('position')).order_by('-position')
 
 
 
