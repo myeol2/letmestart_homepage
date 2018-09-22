@@ -37,10 +37,16 @@
     {% for team in team_list %}
     <div class="photo-text {% if forloop.counter|divisibleby:2 %} photo-right {% endif %}">
       <div class="photo-grid">
-        {% for group_photo in play.teamphotos|in_team:team %}
+        
+	{% if play.teamphotos|in_team:team %}
+	{% for group_photo in play.teamphotos|in_team:team %}
         <div class="grid-photo" style="background-image: url('{{group_photo.group_photo.url}}')">
         </div>
         {% endfor %}
+	{% else %}
+	 <div class="grid-photo" style="height: 80%; background-image:linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('{% static 'img/no_image.jpg'%}')">
+        </div>
+	{% endif %}
       </div>
       <div class="text">
         <h1>{{team}}팀</h1>

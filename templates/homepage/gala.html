@@ -59,7 +59,7 @@
       </div>
       <div class="photo-grid">
         {% for gala in gala_list %} 
-          <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}'), url('../img/')">
+          <div class= "grid-photo" style="background-image: url('{{ gala.poster.url }}')">
             <a data-fancybox="gallery" href="{{gala.poster.url}}" class="img-description">크게 보기</a>       
           </div>
         {% endfor %}
