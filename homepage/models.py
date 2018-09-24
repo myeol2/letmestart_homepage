@@ -171,7 +171,7 @@ class PlayMember(models.Model):
     play = models.ForeignKey(Play, related_name="members", on_delete=models.CASCADE)
    
     class Meta:
-        ordering = ['admission_order_letme', 'name']
+        ordering = ['team','admission_order_letme', 'name']
         verbose_name_plural = "함께한 사람들(정기공연 페이지, 사람들 페이지에 모두 사용됨)"
 
     PLANNING = u"기획"
